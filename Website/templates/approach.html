@@ -1,0 +1,235 @@
+<div class="approach-page">
+    <section class="page-header">
+        <div class="video-background">
+            <video autoplay muted loop playsinline>
+                <source src="/Media/video-003.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="container">
+            <h1 class="fade-in" data-i18n="approach.hero.title">Our Approach</h1>
+            <p class="fade-in" style="animation-delay: 0.2s;" data-i18n="approach.hero.subtitle">Methodology meets
+                Innovation.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="methodology-grid">
+                <div class="methodology-item">
+                    <h2 data-i18n="approach.scalable.title">Scalable Design</h2>
+                    <p>We prioritize brand-driven design approaches to make them scalable and reproducible. Whether it's
+                        a chain of restaurants, kiosks, or luxury resorts, we ensure consistency and quality across all
+                        locations.</p>
+                </div>
+                <div class="methodology-item">
+                    <h2 data-i18n="approach.lean.title">Lean Management</h2>
+                    <p>Using the best tools and management practices, we deliver fast and lean solutions tailored for
+                        each situation. Our process minimizes waste and maximizes value.</p>
+                </div>
+                <div class="methodology-item">
+                    <h2 data-i18n="approach.tech.title">Advanced Technology</h2>
+                    <p>We leverage cutting-edge tools, including AI and parametric design software, to optimize output
+                        per resource and visualize complex concepts before construction begins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: var(--color-bg-secondary);">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: var(--spacing-lg);">Detailed Offerings</h2>
+
+            <div class="services-list">
+                <div class="service-category">
+                    <div class="service-icon">01</div>
+                    <div class="service-content">
+                        <h3>Technical Drawings</h3>
+                        <p>Precision-engineered plans for seamless execution.</p>
+                        <ul class="service-items">
+                            <li>Electrical Schematics & Load Planning</li>
+                            <li>Air Conditioning & Ventilation Installation</li>
+                            <li>Comprehensive Lighting Plans</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-category">
+                    <div class="service-icon">02</div>
+                    <div class="service-content">
+                        <h3>Turn-key Build</h3>
+                        <p>End-to-end project management and execution.</p>
+                        <ul class="service-items">
+                            <li>Strategic Outsourcing & Vendor Management</li>
+                            <li>Project Watchdogging & Timeline Control</li>
+                            <li>Rigorous Quality Control & Safety Standards</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-category">
+                    <div class="service-icon">03</div>
+                    <div class="service-content">
+                        <h3>Concept Design</h3>
+                        <p>The artistic vision that defines the space.</p>
+                        <ul class="service-items">
+                            <li>Brand Identity Integration</li>
+                            <li>Color Palette & Material Selection</li>
+                            <li>Custom Furniture & Fixture Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    .methodology-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .methodology-item h2 {
+        font-size: 1.5rem;
+        color: var(--color-accent);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .services-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .service-category {
+        display: flex;
+        gap: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .service-category:last-child {
+        border-bottom: none;
+    }
+
+    .service-icon {
+        font-family: var(--font-heading);
+        font-size: 3rem;
+        color: var(--color-accent);
+        opacity: 0.6;
+        line-height: 1;
+    }
+
+    .service-content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .service-content p {
+        color: var(--color-text-secondary);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .service-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .service-items li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .service-items li::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        background-color: var(--color-accent);
+        border-radius: 50%;
+    }
+
+
+    @media (max-width: 768px) {
+        .service-category {
+            flex-direction: column;
+        }
+    }
+
+    /* Approach Page Hero with Video Background */
+    .approach-page .page-header {
+        position: relative;
+        height: 80vh;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .approach-page .page-header .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .approach-page .page-header video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .approach-page .page-header .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom,
+                rgba(5, 5, 5, 0.7) 0%,
+                rgba(18, 18, 18, 0.5) 30%,
+                rgba(18, 18, 18, 0.2) 60%,
+                transparent 90%);
+        z-index: 1;
+    }
+
+    /* Additional fade effect at bottom */
+    .approach-page .page-header::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to bottom, transparent, var(--color-bg-primary));
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .approach-page .page-header .container {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+    }
+
+    .approach-page .page-header h1 {
+        font-size: 3.5rem;
+        margin-bottom: var(--spacing-md);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .approach-page .page-header p {
+        font-size: 1.5rem;
+        color: var(--color-text-secondary);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+</style>

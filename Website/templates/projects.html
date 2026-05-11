@@ -1,0 +1,265 @@
+<div class="projects-page">
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">Selected Works</h1>
+            <p class="fade-in" style="animation-delay: 0.2s;">A portfolio of precision and elegance.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <!-- Filter Controls -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Private Residence -->
+                <a href="project-1.html" class="project-item" data-category="residential">
+                    <div class="project-image">
+                        <img src="/Media/1/2.jpg" alt="Private Residence - Concept Design by CuttingEdge"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <h3>Private Residence</h3>
+                            <p>Concept Design</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 2: Urban Apartment -->
+                <a href="project-2.html" class="project-item" data-category="residential">
+                    <div class="project-image">
+                        <img src="/Media/2/001.jpg" alt="Urban Apartment - Concept Design by CuttingEdge"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <h3>Urban Apartment</h3>
+                            <p>Concept Design</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 3: Heritage Villa -->
+                <a href="project-3.html" class="project-item" data-category="residential">
+                    <div class="project-image">
+                        <img src="/Media/3/3 copy.jpg" alt="Heritage Villa - Technical Design by CuttingEdge"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <h3>Heritage Villa</h3>
+                            <p>Technical Design</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 4: Hospitality Collection -->
+                <a href="project-4.html" class="project-item" data-category="hospitality">
+                    <div class="project-image">
+                        <img src="/Media/4/Bar_2_1.jpg" alt="Hospitality Collection - Turn-key Build by CuttingEdge"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <h3>Hospitality Collection</h3>
+                            <p>Turn-key Build</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 5: Restaurant Looks -->
+                <a href="project-5.html" class="project-item" data-category="hospitality">
+                    <div class="project-image">
+                        <img src="/Media/5/restaurant Looks  (4).JPG"
+                            alt="Restaurant Looks - Full Service by CuttingEdge" loading="lazy">
+                        <div class="project-overlay">
+                            <h3>Restaurant Looks</h3>
+                            <p>Full Service</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 6: Boutique Hotel Suite -->
+                <a href="project-6.html" class="project-item" data-category="hospitality">
+                    <div class="project-image">
+                        <img src="/Media/6/IMG_3537.JPG" alt="Boutique Hotel Suite - Concept Design by CuttingEdge"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <h3>Boutique Hotel Suite</h3>
+                            <p>Concept Design</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 7: Executive Suite -->
+                <a href="project-7.html" class="project-item" data-category="hospitality">
+                    <div class="project-image">
+                        <img src="/Media/7/IMG_3539.JPG" alt="Executive Suite - Concept Design by CuttingEdge"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <h3>Executive Suite</h3>
+                            <p>Concept Design</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 8: Johannes Obrecht -->
+                <a href="project-8.html" class="project-item" data-category="residential">
+                    <div class="project-image">
+                        <img src="/Media/8/2Z9C4471large - Copy.jpg"
+                            alt="Johannes Obrecht - Full Service by CuttingEdge" loading="lazy">
+                        <div class="project-overlay">
+                            <h3>Johannes Obrecht</h3>
+                            <p>Full Service</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 10: Modern Villa -->
+                <a href="project-10.html" class="project-item" data-category="residential">
+                    <div class="project-image">
+                        <img src="/Media/10/IMG_0717.jpg" alt="Modern Villa - Full Service by CuttingEdge"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <h3>Modern Villa</h3>
+                            <p>Full Service</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    .project-filters {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        background: none;
+        border: none;
+        color: var(--color-text-secondary);
+        cursor: pointer;
+        font-family: var(--font-body);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.8rem;
+        transition: color var(--transition-fast);
+        padding: 0.5rem 1rem;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+        color: var(--color-accent);
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .project-item {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+        cursor: pointer;
+    }
+
+    .project-item.hidden {
+        display: none;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .project-item:hover .project-image img {
+        transform: scale(1.05);
+    }
+
+    .project-item:hover .project-overlay {
+        opacity: 1;
+    }
+
+    .project-overlay h3 {
+        color: var(--color-text-primary);
+        font-size: 1.5rem;
+        transform: translateY(20px);
+        transition: transform 0.4s ease;
+    }
+
+    .project-overlay p {
+        color: var(--color-accent);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        transform: translateY(20px);
+        transition: transform 0.4s ease 0.1s;
+    }
+
+    .project-item:hover .project-overlay h3,
+    .project-item:hover .project-overlay p {
+        transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<script>
+    // Project filtering functionality
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                // Update active state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+
+                projectItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    });
+</script>

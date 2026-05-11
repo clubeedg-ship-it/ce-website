@@ -1,0 +1,16 @@
+# Specify the index file
+DirectoryIndex index.html
+
+# Prevent directory listing
+Options -Indexes
+
+RewriteEngine On
+
+# Allow extensionless URLs (e.g. /approach -> /approach.html)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L,QSA]
+
+# Block dotfiles
+RewriteRule ^\.(.*) - [F]

@@ -1,0 +1,457 @@
+<div class="project-detail-page">
+    <!-- Hero Section -->
+    <section class="project-hero">
+        <div class="project-hero-image">
+            <img src="Media/{{ project_id }}/{{ hero_image }}"
+                alt="{{ project_name }} - {{ project_category }} by CuttingEdge">
+            <div class="project-hero-overlay"></div>
+        </div>
+        <div class="project-hero-content container">
+            <a href="projects.html" class="back-link" data-i18n="projects.detail.back">← Back to Projects</a>
+            <h1 class="fade-in">{{ project_name }}</h1>
+            <p class="project-category fade-in" style="animation-delay: 0.2s;">{{ project_category }}</p>
+        </div>
+    </section>
+
+    <!-- Project Meta -->
+    <section class="project-meta section">
+        <div class="container">
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">Location</span>
+                    <span class="meta-value">{{ project_location }}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Year</span>
+                    <span class="meta-value">{{ project_year }}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Scope</span>
+                    <span class="meta-value">{{ project_scope }}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Type</span>
+                    <span class="meta-value">{{ project_type }}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="project-story section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-label">
+                    <h2>The Challenge</h2>
+                </div>
+                <div class="story-content">
+                    <p>{{ project_challenge }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="project-gallery section" style="background-color: var(--color-bg-secondary);">
+        <div class="container">
+            <div class="gallery-grid">
+                {{ project_images }}
+            </div>
+        </div>
+    </section>
+
+    <!-- The Outcome -->
+    <section class="project-story section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-label">
+                    <h2>The Outcome</h2>
+                </div>
+                <div class="story-content">
+                    <p>{{ project_outcome }}</p>
+                    {{ project_metric }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Project -->
+    <section class="next-project">
+        <a href="{{ next_project_url }}" class="next-project-link">
+            <div class="next-project-content container">
+                <span class="next-label">Next Project</span>
+                <h3 class="next-title">{{ next_project_name }}</h3>
+                <span class="next-arrow">→</span>
+            </div>
+            <div class="next-project-image">
+                <img src="Media/{{ next_project_id }}/{{ next_project_image }}" alt="{{ next_project_name }}">
+            </div>
+        </a>
+    </section>
+</div>
+
+<style>
+    /* Project Hero */
+    .project-hero {
+        position: relative;
+        height: 70vh;
+        min-height: 500px;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    .project-hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .project-hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .project-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom,
+                rgba(18, 18, 18, 0.3) 0%,
+                rgba(18, 18, 18, 0.5) 50%,
+                rgba(18, 18, 18, 0.95) 100%);
+    }
+
+    .project-hero-content {
+        position: relative;
+        z-index: 1;
+        padding-bottom: var(--spacing-xl);
+    }
+
+    .project-hero-content .back-link {
+        display: inline-block;
+        margin-bottom: var(--spacing-md);
+        color: var(--color-accent);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transition: opacity var(--transition-fast);
+    }
+
+    .project-hero-content .back-link:hover {
+        opacity: 0.7;
+    }
+
+    .project-hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .project-hero-content .project-category {
+        color: var(--color-text-secondary);
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: 0.15em;
+    }
+
+    /* Project Meta */
+    .project-meta {
+        padding: var(--spacing-lg) 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .meta-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .meta-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .meta-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--color-accent);
+    }
+
+    .meta-value {
+        font-size: 1rem;
+        color: var(--color-text-primary);
+    }
+
+    /* Story Sections */
+    .project-story {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .story-grid {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: var(--spacing-xl);
+        align-items: start;
+    }
+
+    .story-label h2 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--color-accent);
+        font-family: var(--font-body);
+        font-weight: 400;
+        position: relative;
+        padding-left: var(--spacing-md);
+    }
+
+    .story-label h2::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 1px;
+        background: var(--color-accent);
+    }
+
+    .story-content p {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        color: var(--color-text-secondary);
+        max-width: 700px;
+    }
+
+    .story-content .metric {
+        margin-top: var(--spacing-md);
+        padding: var(--spacing-md);
+        background: rgba(255, 255, 255, 0.02);
+        border-left: 2px solid var(--color-accent);
+        display: inline-block;
+    }
+
+    .metric-value {
+        font-family: var(--font-heading);
+        font-size: 2rem;
+        color: var(--color-text-primary);
+    }
+
+    .metric-label {
+        font-size: 0.8rem;
+        color: var(--color-text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    /* Gallery */
+    .project-gallery {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .project-detail-image {
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.02);
+        position: relative;
+    }
+
+    /* First image - large featured */
+    .project-detail-image:nth-child(1) {
+        grid-column: span 12;
+        aspect-ratio: 21/9;
+    }
+
+    /* Second and third - side by side */
+    .project-detail-image:nth-child(2),
+    .project-detail-image:nth-child(3) {
+        grid-column: span 6;
+        aspect-ratio: 4/3;
+    }
+
+    /* Fourth - full width panoramic */
+    .project-detail-image:nth-child(4) {
+        grid-column: span 12;
+        aspect-ratio: 16/7;
+    }
+
+    /* Fifth, sixth, seventh - triptych */
+    .project-detail-image:nth-child(5),
+    .project-detail-image:nth-child(6),
+    .project-detail-image:nth-child(7) {
+        grid-column: span 4;
+        aspect-ratio: 3/4;
+    }
+
+    /* Eighth and beyond - alternating pattern */
+    .project-detail-image:nth-child(8) {
+        grid-column: span 8;
+        aspect-ratio: 16/9;
+    }
+
+    .project-detail-image:nth-child(9) {
+        grid-column: span 4;
+        aspect-ratio: 3/4;
+    }
+
+    .project-detail-image:nth-child(n+10) {
+        grid-column: span 6;
+        aspect-ratio: 4/3;
+    }
+
+    .project-detail-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-detail-image:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Mobile - stack all images */
+    @media (max-width: 768px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .project-detail-image:nth-child(n) {
+            grid-column: span 1;
+            aspect-ratio: 4/3;
+        }
+
+        .project-detail-image:nth-child(1) {
+            aspect-ratio: 16/9;
+        }
+    }
+
+    /* Next Project */
+    .next-project {
+        position: relative;
+        height: 40vh;
+        min-height: 300px;
+        overflow: hidden;
+    }
+
+    .next-project-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .next-project-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .next-project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.4);
+        transition: all 0.6s ease;
+    }
+
+    .next-project-link:hover .next-project-image img {
+        filter: brightness(0.6);
+        transform: scale(1.02);
+    }
+
+    .next-project-content {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .next-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--color-accent);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .next-title {
+        font-size: 2.5rem;
+        color: var(--color-text-primary);
+        margin-bottom: var(--spacing-sm);
+        transition: color var(--transition-fast);
+    }
+
+    .next-project-link:hover .next-title {
+        color: var(--color-accent);
+    }
+
+    .next-arrow {
+        font-size: 1.5rem;
+        color: var(--color-accent);
+        transition: transform var(--transition-fast);
+    }
+
+    .next-project-link:hover .next-arrow {
+        transform: translateX(10px);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .meta-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .story-grid {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .story-label h2::before {
+            display: none;
+        }
+
+        .story-label h2 {
+            padding-left: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .project-hero {
+            height: 60vh;
+        }
+
+        .project-hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .next-title {
+            font-size: 1.8rem;
+        }
+    }
+</style>

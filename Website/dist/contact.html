@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | CuttingEdge Interior Design</title>
+    <meta name="description" content="Start your project with CuttingEdge. Amsterdam office, worldwide delivery. Let's shape something extraordinary together.">
+    <link rel="canonical" href="https://cuttingedge.world/contact.html">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact | CuttingEdge Interior Design">
+    <meta property="og:description" content="Start your project with CuttingEdge. Amsterdam office, worldwide delivery. Let's shape something extraordinary together.">
+    <meta property="og:url" content="https://cuttingedge.world/contact.html">
+    <meta property="og:image" content="https://cuttingedge.world/Media/cuttingedge-tabicon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Media/cuttingedge-tabicon.png">
+    <link rel="apple-touch-icon" href="Media/cuttingedge-tabicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <!-- HTMX -->
+    
+
+    <!-- Translations -->
+    <script src="static/js/translations.js"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CuttingEdge",
+  "description": "Pragmatic luxury interior design studio specializing in hospitality, residential, and commercial projects.",
+  "url": "https://cuttingedge.world",
+  "logo": "https://cuttingedge.world/Media/cuttingedge-tabicon.png",
+  "image": "https://cuttingedge.world/Media/cuttingedge-tabicon.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ookmeerweg 101",
+    "addressLocality": "Amsterdam",
+    "postalCode": "1068AP",
+    "addressCountry": "NL"
+  },
+  "telephone": "+31647639702",
+  "email": "info@cuttingedge.world",
+  "priceRange": "$$$",
+  "areaServed": [
+    "Netherlands",
+    "Europe",
+    "Worldwide"
+  ],
+  "serviceType": [
+    "Interior Design",
+    "Concept Design",
+    "Turn-key Build",
+    "Technical Drawings"
+  ]
+}
+</script>
+</head>
+
+
+<body>
+    <header class="site-header" id="header">
+        <div class="container nav-container">
+            <!-- Logo temporarily removed for redesign -->
+            <!-- <a href="index.html" class="logo">
+                <img src="Media/logo.svg" alt="CuttingEdge Logo">
+            </a> -->
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link"
+                            data-i18n="nav.home">Home</a>
+                    </li>
+                    <li><a href="approach.html" class="nav-link" data-i18n="nav.approach">Approach</a></li>
+                    <li><a href="projects.html" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="nl">NL</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="fade-in">
+        <div class="contact-page">
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">Let's Create Together</h1>
+            <p class="fade-in" style="animation-delay: 0.2s;">Every exceptional space begins with a conversation.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Start Your Journey</h2>
+                    <p class="contact-intro">Whether you have a clear vision or just the beginning of an idea,
+                        we'd love to hear from you. Our team is available for projects worldwide—from intimate
+                        residential spaces to large-scale hospitality ventures.</p>
+
+                    <p class="contact-promise">Every inquiry receives our personal attention. We typically respond
+                        within 24 hours.</p>
+
+                    <div class="info-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:klucas.lucas@gmail.com">klucas.lucas@gmail.com</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+31647639702">+31 6 47 63 97 02</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Studio</h3>
+                        <p>Ookmeerweg 101<br>1068AP Amsterdam<br>The Netherlands</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h3 class="form-title">Send Us a Message</h3>
+                    <form class="contact-form"
+                        onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will be in touch within 24 hours.');">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" placeholder="How should we address you?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="Where can we reach you?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-type">Project Type</label>
+                            <select id="project-type" name="project-type">
+                                <option value="">Select a category (optional)</option>
+                                <option value="residential">Residential</option>
+                                <option value="hospitality">Hospitality</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="5"
+                                placeholder="Tell us about your vision, project scope, or any questions you have..."
+                                required></textarea>
+                        </div>
+
+                        <div class="form-group form-group-checkbox">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">
+                                I agree to the processing of my personal data as described in the
+                                <a href="privacy.html" target="_blank">Privacy Policy</a> *
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<style>
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .contact-intro {
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-text-secondary);
+        line-height: 1.8;
+    }
+
+    .contact-promise {
+        font-style: italic;
+        color: var(--color-accent);
+        margin-bottom: var(--spacing-md);
+        font-size: 0.95rem;
+    }
+
+    .info-item {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .info-item h3 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.1em;
+    }
+
+    .info-item a {
+        color: var(--color-text-primary);
+        transition: color var(--transition-fast);
+    }
+
+    .info-item a:hover {
+        color: var(--color-accent);
+    }
+
+    .contact-form-container {
+        background-color: rgba(255, 255, 255, 0.02);
+        padding: var(--spacing-md);
+        border: 1px solid var(--color-border);
+    }
+
+    .form-title {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-md);
+        color: var(--color-text-primary);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--color-text-secondary);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--color-border);
+        color: var(--color-text-primary);
+        font-family: var(--font-body);
+        transition: border-color var(--transition-fast);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: var(--color-text-secondary);
+        opacity: 0.6;
+    }
+
+    .form-group select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CCCCCC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1rem;
+        cursor: pointer;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--color-accent);
+    }
+
+    @media (max-width: 768px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Consent Checkbox */
+    .form-group-checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .form-group-checkbox input[type="checkbox"] {
+        width: auto;
+        margin-top: 0.25rem;
+        accent-color: var(--color-accent);
+        cursor: pointer;
+    }
+
+    .form-group-checkbox label {
+        margin-bottom: 0;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        cursor: pointer;
+    }
+
+    .form-group-checkbox a {
+        color: var(--color-accent);
+        text-decoration: underline;
+    }
+
+    .form-group-checkbox a:hover {
+        opacity: 0.8;
+    }
+</style>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <!-- Decorative Gold Line -->
+            <div class="footer-accent-line"></div>
+
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-column footer-brand">
+                    <h3 class="footer-logo">CuttingEdge</h3>
+                    <p class="footer-tagline">Crafting Exceptional Interiors</p>
+                    <p class="footer-description">
+                        With expertise across hospitality, residential, and commercial sectors, we create
+                        spaces that inspire, innovate, and elevate experiences worldwide.
+                    </p>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="footer-column footer-contact-info">
+                    <h4 data-i18n="footer.contact">Contact</h4>
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:klucas.lucas@gmail.com">klucas.lucas@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Phone</span>
+                        <a href="tel:+31647639702">+31 6 47 63 97 02</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Office</span>
+                        <address>Ookmeerweg 101<br>1068AP, Amsterdam</address>
+                    </div>
+                </div>
+
+                <!-- Quick Contact Form (WhatsApp) -->
+                <div class="footer-column footer-form">
+                    <h4 data-i18n="footer.touch.title">Get in Touch</h4>
+                    <p class="contact-description" data-i18n="footer.touch.subtitle">Let's discuss your next project</p>
+
+                    <form id="whatsapp-form" class="whatsapp-form">
+                        <div class="form-group">
+                            <input type="text" id="contact-name" placeholder="Your Name*" data-i18n="footer.form.name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contact-email" placeholder="Email Address*"
+                                data-i18n="footer.form.email" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="contact-service" required>
+                                <option value="" data-i18n="footer.form.service">Select Service*</option>
+                                <option value="Technical Drawings" data-i18n="footer.form.service.technical">Technical
+                                    Drawings</option>
+                                <option value="Turn-key Build" data-i18n="footer.form.service.turnkey">Turn-key Build
+                                </option>
+                                <option value="Concept Design" data-i18n="footer.form.service.concept">Concept Design
+                                </option>
+                                <option value="Full Service" data-i18n="footer.form.service.full">Full Service</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contact-message" placeholder="Tell us about your project"
+                                data-i18n="footer.form.message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn-footer" data-i18n="footer.form.submit">Send via
+                            WhatsApp</button>
+                    </form>
+                </div>
+
+                <!-- Navigation & Social Column -->
+                <div class="footer-column footer-nav-social">
+                    <div class="quick-links">
+                        <h4 data-i18n="footer.quicklinks">Navigation</h4>
+                        <a href="index.html">Home</a>
+                        <a href="approach.html">Approach</a>
+                        <a href="projects.html">Projects</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+
+                    <div class="social-section">
+                        <h4 data-i18n="footer.follow">Connect</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="Instagram">Instagram</a>
+                            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                            <a href="#" aria-label="Pinterest">Pinterest</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 CuttingEdge. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span class="legal-divider">|</span>
+                    <a href="legal.html">Legal Notice</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Video Preloader Logic (Home Page Only)
+        (function () {
+            const preloader = document.getElementById('video-preloader');
+
+            // Only run if preloader exists (home page)
+            if (!preloader) return;
+
+            const video = document.getElementById('preloader-video');
+            const PRELOADER_TIMEOUT = 30 * 60 * 1000; // 30 minutes in milliseconds
+
+            // Check if preloader was shown recently
+            const lastShown = sessionStorage.getItem('preloaderLastShown');
+            const now = Date.now();
+
+            // Show preloader if it hasn't been shown in this session OR 30+ minutes have passed
+            if (!lastShown || (now - parseInt(lastShown)) > PRELOADER_TIMEOUT) {
+                // Move preloader to be direct child of body for proper positioning
+                document.body.appendChild(preloader);
+
+                // Show preloader
+                preloader.style.display = 'flex';
+
+                // Store timestamp
+                sessionStorage.setItem('preloaderLastShown', now.toString());
+
+                // Add preloader-active class to body to hide scrollbars
+                document.body.classList.add('preloader-active');
+
+                // Try to play video
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(err => {
+                        console.log('Autoplay blocked, will play on user interaction');
+                        // Add one-time click/touch listener to start video
+                        const startVideo = () => {
+                            video.play();
+                            document.removeEventListener('click', startVideo);
+                            document.removeEventListener('touchstart', startVideo);
+                        };
+                        document.addEventListener('click', startVideo, { once: true });
+                        document.addEventListener('touchstart', startVideo, { once: true });
+                    });
+                }
+
+                let fadeTriggered = false;
+
+                // Monitor video playback
+                video.addEventListener('timeupdate', function () {
+                    const duration = video.duration;
+                    const currentTime = video.currentTime;
+
+                    // Trigger fade-out 0.8 seconds before video ends
+                    if (!fadeTriggered && duration - currentTime <= 0.8) {
+                        fadeTriggered = true;
+                        preloader.classList.add('fade-out');
+
+                        setTimeout(function () {
+                            preloader.remove();
+                            document.body.classList.remove('preloader-active');
+                        }, 1000);
+                    }
+                });
+
+                // Fallback: If video fails, remove preloader after 10 seconds
+                setTimeout(function () {
+                    if (preloader.parentNode) {
+                        preloader.classList.add('fade-out');
+                        setTimeout(function () {
+                            preloader.remove();
+                            document.body.classList.remove('preloader-active');
+                        }, 1000);
+                    }
+                }, 10000);
+            }
+        })();
+
+        // Simple script to handle header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Static navigation - no event listeners needed
+        // WhatsApp Form Handler
+        document.getElementById('whatsapp-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const service = document.getElementById('contact-service').value;
+            const message = document.getElementById('contact-message').value || 'No additional message';
+
+            // Create personalized WhatsApp message
+            const whatsappMessage = `Hi! I am ${encodeURIComponent(name)}, (${encodeURIComponent(email)}).%0A` +
+                `I am interested in ${encodeURIComponent(service)} that i have seen in your website.%0A` +
+                `Details: ${encodeURIComponent(message)}`;
+
+            // WhatsApp number (international format without + or spaces)
+            const whatsappNumber = '31647639702';
+
+            // Open WhatsApp (works on both mobile and desktop)
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+            window.open(whatsappURL, '_blank');
+
+            // Reset form
+            this.reset();
+        });
+
+        // Aggressive video autoplay handler for mobile browsers
+        (function () {
+            function playAllVideos() {
+                const videos = document.querySelectorAll('video');
+                videos.forEach(video => {
+                    if (video.paused) {
+                        video.play().catch(err => console.log('Video play attempt:', err.message));
+                    }
+                });
+            }
+
+            // Try immediately on page load
+            window.addEventListener('load', playAllVideos);
+
+            // Try on any user interaction (works for dynamically added videos too)
+            ['click', 'touchstart', 'touchend', 'scroll', 'keydown'].forEach(eventType => {
+                document.addEventListener(eventType, playAllVideos, { once: true, capture: true });
+            });
+
+            // Also try after a short delay (catches preloader after it's added to DOM)
+            setTimeout(playAllVideos, 100);
+            setTimeout(playAllVideos, 500);
+        })();
+        // Force video autoplay - fallback for browsers that block autoplay
+        document.addEventListener('DOMContentLoaded', function () {
+            const videos = document.querySelectorAll('video[autoplay]');
+            videos.forEach(video => {
+                // Attempt to play
+                const playPromise = video.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        // Autoplay started successfully
+                        console.log('Video autoplay successful');
+                    }).catch(error => {
+                        // Autoplay was prevented
+                        console.log('Autoplay blocked, attempting fallback');
+                        // Try to play on user interaction
+                        document.addEventListener('click', function playOnClick() {
+                            video.play();
+                            document.removeEventListener('click', playOnClick);
+                        }, { once: true });
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

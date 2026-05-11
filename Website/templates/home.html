@@ -1,0 +1,254 @@
+<div class="home-page">
+    <!-- Video Preloader - Only on Home Page, Once per Session -->
+    <div id="video-preloader" class="video-preloader" style="display: none;">
+        <video id="preloader-video" autoplay muted playsinline webkit-playsinline>
+            <source src="/Media/video-000.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="video-background">
+            <video autoplay muted loop playsinline poster="">
+                <source src="/Media/video-001.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
+
+        <div class="hero-content container">
+            <h1 class="fade-in" data-i18n="home.hero.title">Pragmatic Luxury</h1>
+            <p class="subtitle fade-in" style="animation-delay: 0.2s;" data-i18n="home.hero.subtitle">Translating vision
+                into enduring reality.</p>
+            <div class="hero-ctas fade-in" style="animation-delay: 0.4s;">
+                <a href="projects.html" class="btn btn-primary">Explore Our Work</a>
+                <a href="approach.html" class="btn btn-outline">How We Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- UVP Section -->
+    <section class="section uvp-section">
+        <div class="container">
+            <div class="uvp-grid">
+                <div class="uvp-text">
+                    <h2>Thinking Ahead</h2>
+                    <p>We prioritize brand-driven design approaches to make them scalable and reproducible. From
+                        restaurants to luxury resorts, we maintain the highest quality standards while using the best
+                        tools to deliver fast and lean solutions.</p>
+                </div>
+                <div class="uvp-highlight">
+                    <h3>Our Core Value</h3>
+                    <p>Translating the client's will into the long-term shape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offerings Preview -->
+    <section class="section offerings-section" style="background-color: var(--color-bg-secondary);">
+        <div class="container">
+            <h2 class="section-title">Our Expertise</h2>
+            <p class="section-subtitle"
+                style="text-align: center; color: var(--color-text-secondary); margin-bottom: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto;">
+                Three pillars of excellence that transform spaces into experiences.</p>
+            <div class="grid offerings-grid">
+                <div class="offering-card">
+                    <span class="offering-number">01</span>
+                    <h3>Technical Drawings</h3>
+                    <p class="offering-desc">Precision meets vision. Every detail documented for flawless execution.</p>
+                    <ul>
+                        <li>Electrical Systems</li>
+                        <li>Air Installation</li>
+                        <li>Lighting Plans</li>
+                    </ul>
+                </div>
+                <div class="offering-card">
+                    <span class="offering-number">02</span>
+                    <h3>Turn-key Build</h3>
+                    <p class="offering-desc">From concept to keys in hand. We manage every step so you don't have to.
+                    </p>
+                    <ul>
+                        <li>Outsourcing</li>
+                        <li>Watchdogging</li>
+                        <li>Quality Control</li>
+                    </ul>
+                </div>
+                <div class="offering-card">
+                    <span class="offering-number">03</span>
+                    <h3>Concept Design</h3>
+                    <p class="offering-desc">Where brand identity becomes spatial experience.</p>
+                    <ul>
+                        <li>Brand Identity</li>
+                        <li>Color Theory</li>
+                        <li>Furniture Selection</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="center-btn" style="text-align: center; margin-top: var(--spacing-lg);">
+                <a href="approach.html" class="btn">Discover Our Approach</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Video Section -->
+    <section class="closing-video-section">
+        <div class="video-background">
+            <video autoplay muted loop playsinline>
+                <source src="/Media/video-002.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
+
+        <div class="closing-content container">
+            <h2 class="fade-in" data-i18n="home.closing.title">Crafted Experiences</h2>
+            <p class="subtitle fade-in" style="animation-delay: 0.2s;" data-i18n="home.closing.subtitle">From concept to
+                completion, we bring your vision
+                to life.</p>
+            <a href="contact.html" class="btn btn-primary fade-in" style="animation-delay: 0.4s;">Start Your Project</a>
+        </div>
+    </section>
+
+</div>
+
+<style>
+    /* Hero Specific Styles */
+    .hero-section {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .video-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .video-background .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        /* Darken video */
+    }
+
+    .hero-content {
+        text-align: center;
+        z-index: 1;
+    }
+
+    .hero-content h1 {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: var(--spacing-md);
+        color: var(--color-text-secondary);
+    }
+
+    /* UVP Section */
+    .uvp-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+        align-items: center;
+    }
+
+    .uvp-highlight {
+        border-left: 2px solid var(--color-accent);
+        padding-left: var(--spacing-md);
+    }
+
+    /* Offerings Grid */
+    .offerings-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .offering-card {
+        background: rgba(255, 255, 255, 0.03);
+        padding: var(--spacing-md);
+        border: 1px solid var(--color-border);
+        transition: transform var(--transition-fast);
+    }
+
+    .offering-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-accent);
+    }
+
+    .offering-card h3 {
+        color: var(--color-accent);
+        margin-bottom: var(--spacing-sm);
+        font-family: var(--font-body);
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .offering-card ul li {
+        margin-bottom: 0.5rem;
+        color: var(--color-text-secondary);
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .offering-card ul li::before {
+        content: '•';
+        color: var(--color-accent);
+        position: absolute;
+        left: 0;
+    }
+
+    /* Closing Video Section */
+    .closing-video-section {
+        position: relative;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .closing-content {
+        text-align: center;
+        z-index: 1;
+    }
+
+    .closing-content h2 {
+        color: var(--color-text-primary);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .closing-content .subtitle {
+        font-size: 1.2rem;
+        color: var(--color-text-secondary);
+    }
+
+    @media (max-width: 768px) {
+        .uvp-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .closing-video-section {
+            height: 60vh;
+        }
+    }
+</style>

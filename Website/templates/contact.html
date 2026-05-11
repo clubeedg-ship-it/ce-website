@@ -1,0 +1,220 @@
+<div class="contact-page">
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">Let's Create Together</h1>
+            <p class="fade-in" style="animation-delay: 0.2s;">Every exceptional space begins with a conversation.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Start Your Journey</h2>
+                    <p class="contact-intro">Whether you have a clear vision or just the beginning of an idea,
+                        we'd love to hear from you. Our team is available for projects worldwide—from intimate
+                        residential spaces to large-scale hospitality ventures.</p>
+
+                    <p class="contact-promise">Every inquiry receives our personal attention. We typically respond
+                        within 24 hours.</p>
+
+                    <div class="info-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:klucas.lucas@gmail.com">klucas.lucas@gmail.com</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+31647639702">+31 6 47 63 97 02</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Studio</h3>
+                        <p>Ookmeerweg 101<br>1068AP Amsterdam<br>The Netherlands</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h3 class="form-title">Send Us a Message</h3>
+                    <form class="contact-form"
+                        onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will be in touch within 24 hours.');">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" placeholder="How should we address you?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="Where can we reach you?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-type">Project Type</label>
+                            <select id="project-type" name="project-type">
+                                <option value="">Select a category (optional)</option>
+                                <option value="residential">Residential</option>
+                                <option value="hospitality">Hospitality</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="5"
+                                placeholder="Tell us about your vision, project scope, or any questions you have..."
+                                required></textarea>
+                        </div>
+
+                        <div class="form-group form-group-checkbox">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">
+                                I agree to the processing of my personal data as described in the
+                                <a href="privacy.html" target="_blank">Privacy Policy</a> *
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<style>
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .contact-intro {
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-text-secondary);
+        line-height: 1.8;
+    }
+
+    .contact-promise {
+        font-style: italic;
+        color: var(--color-accent);
+        margin-bottom: var(--spacing-md);
+        font-size: 0.95rem;
+    }
+
+    .info-item {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .info-item h3 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.1em;
+    }
+
+    .info-item a {
+        color: var(--color-text-primary);
+        transition: color var(--transition-fast);
+    }
+
+    .info-item a:hover {
+        color: var(--color-accent);
+    }
+
+    .contact-form-container {
+        background-color: rgba(255, 255, 255, 0.02);
+        padding: var(--spacing-md);
+        border: 1px solid var(--color-border);
+    }
+
+    .form-title {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-md);
+        color: var(--color-text-primary);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--color-text-secondary);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--color-border);
+        color: var(--color-text-primary);
+        font-family: var(--font-body);
+        transition: border-color var(--transition-fast);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: var(--color-text-secondary);
+        opacity: 0.6;
+    }
+
+    .form-group select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CCCCCC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1rem;
+        cursor: pointer;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--color-accent);
+    }
+
+    @media (max-width: 768px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Consent Checkbox */
+    .form-group-checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .form-group-checkbox input[type="checkbox"] {
+        width: auto;
+        margin-top: 0.25rem;
+        accent-color: var(--color-accent);
+        cursor: pointer;
+    }
+
+    .form-group-checkbox label {
+        margin-bottom: 0;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        cursor: pointer;
+    }
+
+    .form-group-checkbox a {
+        color: var(--color-accent);
+        text-decoration: underline;
+    }
+
+    .form-group-checkbox a:hover {
+        opacity: 0.8;
+    }
+</style>

@@ -1,0 +1,16 @@
+# Specify the index file
+DirectoryIndex index.html
+
+# Fix for 403 Forbidden - prevent directory listing but ensure files are accessible
+Options -Indexes
+
+# Handle the case where the user might try to access a page without .html extension
+RewriteEngine On
+
+# Redirect directly to .html version if it exists
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L,QSA]
+
+# Prevent access to .git and hidden files
+RewriteRule ^\.(.*) - [F]
