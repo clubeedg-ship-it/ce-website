@@ -1,0 +1,22 @@
+id: 6
+order: 10
+featured: false
+sector: residential
+services: []
+slugs: { en: kitchen-design, nl: keukenontwerp }
+title: { en: Kitchen Design, nl: Keukenontwerp }
+summary:
+  en: "A calm kitchen in pale oak with a white worktop, built-in appliances and slatted oak panelling."
+  nl: "Een rustige keuken in licht eiken met een wit werkblad, inbouwapparatuur en eikenhouten lamellenpanelen."
+facts: []
+hero: ../../assets/projects/kitchen-design/oak-kitchen.jpg
+heroAlt:
+  en: "Kitchen with pale oak cabinetry, a white worktop, an induction hob and built-in oven, an oak shelf on the wall and slatted wood panelling at the side."
+  nl: "Keuken met licht eiken kasten, een wit werkblad, een inductiekookplaat en inbouwoven, een eiken plank aan de wand en houten lamellenpanelen aan de zijkant."
+heroPosition: center
+gallery:
+  - src: ../../assets/projects/kitchen-design/kitchen-hob.jpg
+    alt:
+      en: "Close view of oak kitchen units with a black induction hob and a built-in oven beside vertical oak slat panelling."
+      nl: "Detail van eiken keukenkasten met een zwarte inductiekookplaat en een inbouwoven naast verticale eiken lamellenpanelen."
+video: null

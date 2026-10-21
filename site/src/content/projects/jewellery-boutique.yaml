@@ -1,0 +1,31 @@
+id: 2
+order: 4
+featured: true
+sector: commercial
+services: []
+slugs: { en: jewellery-boutique, nl: juwelierszaak }
+title: { en: Jewellery Boutique, nl: Juwelierszaak }
+summary:
+  en: A jewellery boutique with quilted tan-leather walls, recessed illuminated display windows and dark wood counters.
+  nl: Een juwelierszaak met gewatteerde cognackleurige leren wanden, verzonken verlichte etalagevensters en donkere houten balies.
+facts: []
+hero: ../../assets/projects/jewellery-boutique/display-wall.jpg
+heroAlt:
+  en: Quilted tan-leather wall with two recessed, internally lit display windows showing jewellery and watches.
+  nl: Gewatteerde cognackleurige leren wand met twee verzonken, van binnenuit verlichte vitrines met sieraden en horloges.
+heroPosition: upper
+gallery:
+  - src: ../../assets/projects/jewellery-boutique/display-cases.jpg
+    alt:
+      en: Illuminated glass display cases and a dark wood counter with necklace busts against a quilted leather wall.
+      nl: Verlichte glazen vitrines en een donkere houten balie met colliershouders voor een gewatteerde leren wand.
+  - src: ../../assets/projects/jewellery-boutique/sales-floor.jpg
+    alt:
+      en: Boutique sales floor with display cases, a staircase to an upper level and daylight from large windows at the back.
+      nl: Verkoopruimte met vitrines, een trap naar een bovenverdieping en daglicht door grote ramen achterin.
+video:
+  src: project-jewellery
+  poster: ../../assets/posters/jewellery.jpg
+  alt:
+    en: Slow camera movement through the jewellery boutique past lit display windows and counters.
+    nl: Rustige camerabeweging door de juwelierszaak langs verlichte vitrines en balies.

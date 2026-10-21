@@ -1,0 +1,3 @@
+cookies set during the whole crawl: 0
+crawled 41 pages; 0 with issues
+pages by html lang: {"en":21,"nl":20}

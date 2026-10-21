@@ -1,0 +1,30 @@
+---
+import Base from '../components/Base.astro';
+import { staticRoutes, url, waLink, type Lang } from '../lib/routes';
+import { ui, contactPage } from '../i18n/copy';
+// Served by the web server for any unknown URL, so it carries both languages.
+const page = { key: 'home' as const, lang: 'en' as Lang, path: '404.html', paths: { en: '', nl: 'nl' } };
+const en = ui.en, nl = ui.nl;
+---
+<Base page={page} noindex metaOverride={{ title: 'Page not found | CuttingEdge', desc: 'This page could not be found. Pagina niet gevonden.' }} ogKey="home">
+  <section class="nf">
+    <div class="wrap">
+      <p class="nf__n" aria-hidden="true">404</p>
+      <h1 class="h2">{en.notFoundTitle}</h1>
+      <p class="lead">{en.notFoundText}</p>
+      <div class="btn-row mt-2">
+        <a class="btn" href={url(staticRoutes.projects.en)}>{en.allProjects} <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost" href={url(staticRoutes.contact.en)}>{en.cta}</a>
+        <a class="btn btn--ghost" href={url()}>{en.navHome}</a>
+      </div>
+      <hr class="rule" />
+      <h2 class="h3" lang="nl">{nl.notFoundTitle}</h2>
+      <p class="lead" lang="nl">{nl.notFoundText}</p>
+      <div class="btn-row mt-2" lang="nl">
+        <a class="btn btn--ghost" href={url(staticRoutes.projects.nl)} hreflang="nl">{nl.allProjects}</a>
+        <a class="btn btn--ghost" href={url(staticRoutes.contact.nl)} hreflang="nl">{nl.cta}</a>
+        <a class="btn btn--ghost" href={url(staticRoutes.home.nl)} hreflang="nl">{nl.navHome}</a>
+      </div>
+    </div>
+  </section>
+</Base>

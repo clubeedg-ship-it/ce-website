@@ -1,0 +1,11 @@
+# Keep configuration and enquiry data away from the web.
+<FilesMatch "^(config\.php|.*\.(jsonl|key|log))$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+Options -Indexes

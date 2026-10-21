@@ -1,0 +1,32 @@
+PASS  GET ?token=1 returns a signed token
+PASS  time-trap: submit <3 s after token -> 422 too_fast
+PASS  time-trap: nothing stored
+PASS  valid submit with aged token -> 200 {ok:true}
+PASS  log has the lead + the mail-result line
+PASS  lead line holds the data and token=ok
+PASS  mail result recorded as ok
+PASS  mail has recipient, Reply-To = visitor, body
+PASS  mail has Subject
+PASS  data dir gets a deny-all .htaccess
+PASS  valid submit without token (no-JS style) accepted
+PASS  …flagged token=none in the log
+PASS  missing email+consent -> 422 with field codes
+PASS  invalid email -> 422 email
+PASS  unknown sector value -> 422 choose
+PASS  non-numeric size -> 422 number
+PASS  invalid submissions are not stored
+PASS  honeypot filled: looks OK to the bot, stores/mails nothing
+PASS  CRLF in name cannot inject a Bcc header
+PASS  foreign Origin -> 403
+PASS  plain POST success -> 303 to the thank-you page
+PASS  plain POST in NL -> 303 to the Dutch thank-you page
+PASS  plain POST error page offers WhatsApp + email fallback
+PASS  PUT -> 405
+PASS  rate limit: 3 accepted, then 429 (got 200 200 200 429 429)
+PASS  rate limit: blocked requests stored nothing
+PASS  mail failure: visitor still gets OK (lead is safe in the log)
+PASS  mail failure: lead is in leads.jsonl
+PASS  mail failure: recorded as ok:false for follow-up
+PASS  log AND mail unavailable: HTTP 500 {ok:false}, never a fake success
+
+RESULT: 30 passed, 0 failed  (workdir /home/otavio/.hermes/profiles/frontend-engineer/cache/scratch/ce-php-test.FhtSvG)

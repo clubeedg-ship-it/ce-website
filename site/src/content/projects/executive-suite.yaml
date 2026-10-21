@@ -1,0 +1,34 @@
+id: 7
+order: 8
+featured: false
+sector: hospitality
+services: [concept-design]
+slugs: { en: executive-suite, nl: directiesuite }
+title: { en: Executive Suite, nl: Directiesuite }
+summary:
+  en: "A suite that merges workspace functionality with hospitality comfort, with discrete work zones and a calm lounge."
+  nl: "Een suite die werkfunctionaliteit combineert met horecacomfort, met discrete werkzones en een rustige loungehoek."
+brief:
+  en: "Create an executive suite that merges workspace functionality with luxury hospitality."
+  nl: "Een directiesuite creëren die werkfunctionaliteit combineert met luxe gastvrijheid."
+challenge:
+  en: "Business travellers needed a space that could move seamlessly from work to relaxation."
+  nl: "Zakelijke reizigers hadden een ruimte nodig die naadloos kan wisselen tussen werken en ontspannen."
+outcome:
+  en: "Discrete work zones with premium ergonomics blend into a sophisticated living environment. The suite serves productivity without sacrificing the sense of retreat."
+  nl: "Discrete werkzones met hoogwaardige ergonomie gaan op in een verfijnde woonomgeving. De suite dient productiviteit zonder het gevoel van een toevluchtsoord op te geven."
+facts:
+  - { key: location, label: { en: Location, nl: Locatie }, value: { en: "Amsterdam, NL", nl: "Amsterdam, NL" } }
+  - { key: year, label: { en: Year, nl: Jaar }, value: { en: "2020", nl: "2020" } }
+  - { key: scope, label: { en: Scope, nl: Omvang }, value: { en: "Suite design", nl: "Suiteontwerp" } }
+hero: ../../assets/projects/executive-suite/lounge-dining.jpg
+heroAlt:
+  en: "Suite seating area with a grey sofa and television by floor-to-ceiling windows with sheer curtains, and a walnut dining table with leather chairs in the foreground."
+  nl: "Zithoek van een suite met een grijze bank en televisie voor raampartijen van vloer tot plafond met vitrages, en een notenhouten eettafel met leren stoelen op de voorgrond."
+heroPosition: upper
+gallery:
+  - src: ../../assets/projects/executive-suite/lounge.jpg
+    alt:
+      en: "Lounge with a grey sofa and ottoman, a potted plant and sheer curtains, and a wooden dining table with chairs in the foreground."
+      nl: "Lounge met een grijze bank en poef, een kamerplant en vitrages, en een houten eettafel met stoelen op de voorgrond."
+video: null

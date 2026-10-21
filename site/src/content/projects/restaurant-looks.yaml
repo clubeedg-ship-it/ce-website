@@ -1,0 +1,45 @@
+id: 5
+order: 2
+featured: true
+sector: hospitality
+services: [concept-design, technical-drawings, turn-key-build]
+slugs: { en: restaurant-looks, nl: restaurant-looks }
+title: { en: Restaurant Looks, nl: Restaurant Looks }
+summary:
+  en: "A restaurant for fine dining with an approachable atmosphere, shaped by warm wood tones, soft light and a sculpted wall."
+  nl: "Een restaurant voor fine dining met een toegankelijke sfeer, vormgegeven met warme houttinten, zacht licht en een gebeeldhouwde wand."
+brief:
+  en: "Design a restaurant that can host fine-dining experiences while keeping an approachable atmosphere."
+  nl: "Een restaurant ontwerpen dat fine dining kan huisvesten en toch een toegankelijke sfeer behoudt."
+challenge:
+  en: "The culinary concept demanded a space that elevates without intimidating."
+  nl: "Het culinaire concept vroeg om een ruimte die verheft zonder te intimideren."
+outcome:
+  en: "Warm wood tones and soft lighting create an intimate setting where guests feel special but relaxed. The design supports the culinary experience without competing with it."
+  nl: "Warme houttinten en zacht licht scheppen een intieme setting waarin gasten zich bijzonder maar ontspannen voelen. Het ontwerp ondersteunt de culinaire beleving zonder ermee te concurreren."
+facts:
+  - { key: location, label: { en: Location, nl: Locatie }, value: { en: "Amsterdam, NL", nl: "Amsterdam, NL" } }
+  - { key: year, label: { en: Year, nl: Jaar }, value: { en: "2008", nl: "2008" } }
+  - { key: scope, label: { en: Scope, nl: Omvang }, value: { en: "Complete design", nl: "Compleet ontwerp" } }
+  - { key: size, label: { en: Covers, nl: Couverts }, value: { en: "60", nl: "60" } }
+hero: ../../assets/projects/restaurant-looks/dining-room.jpg
+heroAlt:
+  en: "Guests seated at a candle-lit table in a softly lit restaurant, with a large dark textured wall panel glowing behind them."
+  nl: "Gasten aan een tafel met kaarslicht in een zacht verlicht restaurant, met een groot donker gestructureerd wandpaneel dat achter hen oplicht."
+heroPosition: center
+heroCredit: Michael Broekmeulen
+gallery:
+  - src: ../../assets/projects/restaurant-looks/open-kitchen.jpg
+    alt:
+      en: "Restaurant interior with an open kitchen where chefs work behind a counter, red lacquered panels and amber ceiling spotlights above set tables."
+      nl: "Restaurantinterieur met een open keuken waar koks achter een counter werken, rood gelakte panelen en amberkleurige plafondspots boven gedekte tafels."
+  - src: ../../assets/projects/restaurant-looks/sculpted-wall.jpg
+    alt:
+      en: "Sculpted charcoal wall with flowing wave relief and a gold “Looks” sign, with pale branch-like sculptures reaching from the corner."
+      nl: "Gebeeldhouwde antracietkleurige wand met een golvend reliëf en een gouden “Looks”-logo, met bleke takvormige sculpturen vanuit de hoek."
+video:
+  src: project-restaurant
+  poster: ../../assets/posters/restaurant.jpg
+  alt:
+    en: "Slow camera move across the sculpted wall of Restaurant Looks and its gold sign."
+    nl: "Rustige camerabeweging langs de gebeeldhouwde wand van Restaurant Looks en het gouden logo."

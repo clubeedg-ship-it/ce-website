@@ -1,0 +1,24 @@
+id: 9
+order: 5
+featured: false
+sector: commercial
+services: []
+slugs: { en: beauty-salon, nl: schoonheidssalon }
+title: { en: Beauty Salon, nl: Schoonheidssalon }
+summary:
+  en: A beauty salon in a soft cream palette, with a sculptural spiral staircase and a curved white sofa, shown in a visualisation film.
+  nl: Een schoonheidssalon in een zacht crèmepalet, met een sculpturale wenteltrap en een gebogen witte bank, getoond in een visualisatiefilm.
+facts: []
+hero: ../../assets/posters/salon.jpg
+heroAlt:
+  en: Beauty salon visualisation in cream tones with a curved white sofa, a reception desk and a large wall emblem.
+  nl: Visualisatie van een schoonheidssalon in crèmetinten met een gebogen witte bank, een receptiebalie en een groot embleem op de wand.
+heroPosition: center
+gallery: []
+video:
+  src: project-salon
+  sm: project-salon-sm
+  poster: ../../assets/posters/salon.jpg
+  alt:
+    en: Visualisation film of the beauty salon, moving past a spiral staircase and a curved white sofa.
+    nl: Visualisatiefilm van het schoonheidssalon, langs een wenteltrap en een gebogen witte bank.

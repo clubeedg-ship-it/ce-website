@@ -1,0 +1,40 @@
+---
+import Base from '../components/Base.astro';
+import Cta from '../components/Cta.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getProjects, type Page } from '../lib/projects';
+import { projectsItemList } from '../lib/schema';
+import { staticRoutes, url, type Lang } from '../lib/routes';
+import { ui, projectsPage } from '../i18n/copy';
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang: Lang = page.lang;
+const t = ui[lang];
+const c = projectsPage[lang];
+const all = await getProjects();
+const sectors = (['hospitality', 'residential', 'commercial'] as const).filter((s) => all.some((p) => p.data.sector === s));
+const trail = [{ name: t.navHome, path: staticRoutes.home[lang] }, { name: t.navProjects, path: page.path }];
+---
+<Base page={page} trail={trail} extraJsonLd={[projectsItemList(all, lang)]}>
+  <header class="pagehead">
+    <div class="wrap">
+      <nav class="crumbs" aria-label={t.breadcrumb}><ol><li><a href={url(staticRoutes.home[lang])}>{t.navHome}</a></li><li aria-current="page">{t.navProjects}</li></ol></nav>
+      <p class="eyebrow">{c.eyebrow}</p>
+      <h1>{c.h1}</h1>
+      <p class="lead">{c.lead}</p>
+    </div>
+  </header>
+  <section class="section section--tight">
+    <div class="wrap" data-filter-root>
+      <div class="filters" role="group" aria-label={t.filterLabel} hidden data-filters>
+        <button class="chip" type="button" aria-pressed="true" data-filter="all">{t.all} ({all.length})</button>
+        {sectors.map((s) => <button class="chip" type="button" aria-pressed="false" data-filter={s}>{t[s]} ({all.filter((p) => p.data.sector === s).length})</button>)}
+        <p class="filters__count" aria-live="polite" data-count data-template={`${t.showing} {n} ${t.projectsWord}`}></p>
+      </div>
+      <div class="pgrid">
+        {all.map((p) => <ProjectCard project={p} lang={lang} summary level={2} />)}
+      </div>
+    </div>
+  </section>
+  <Cta lang={lang} title={c.ctaTitle} text={c.ctaText} />
+</Base>

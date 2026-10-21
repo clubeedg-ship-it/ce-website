@@ -1,0 +1,55 @@
+---
+import Base from '../components/Base.astro';
+import Cta from '../components/Cta.astro';
+import type { Page } from '../lib/projects';
+import { staticRoutes, url, type Lang } from '../lib/routes';
+import { ui } from '../i18n/copy';
+import { privacy, privacyUpdated, legal } from '../i18n/legal';
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang: Lang = page.lang;
+const t = ui[lang];
+const isPrivacy = page.key === 'privacy';
+const trail = [{ name: t.navHome, path: staticRoutes.home[lang] }, { name: isPrivacy ? t.privacy : t.legal, path: page.path }];
+const p = privacy[lang];
+const l = legal[lang];
+---
+<Base page={page} trail={trail}>
+  <header class="pagehead">
+    <div class="wrap">
+      <nav class="crumbs" aria-label={t.breadcrumb}><ol><li><a href={url(staticRoutes.home[lang])}>{t.navHome}</a></li><li aria-current="page">{isPrivacy ? t.privacy : t.legal}</li></ol></nav>
+      <p class="eyebrow">{isPrivacy ? p.eyebrow : l.eyebrow}</p>
+      <h1>{isPrivacy ? p.h1 : l.h1}</h1>
+      <p class="lead">{isPrivacy ? p.lead : l.lead}</p>
+      {isPrivacy && <p class="updated">{privacyUpdated[lang]}</p>}
+    </div>
+  </header>
+  <section class="section section--tight">
+    <div class="wrap">
+      {isPrivacy ? (
+        <div class="prose">
+          {p.blocks.map((b) => (
+            <>
+              {b.h && <h2>{b.h}</h2>}
+              {b.p?.map((x) => <p>{x}</p>)}
+              {b.ul && <ul>{b.ul.map((x) => <li>{x}</li>)}</ul>}
+              {b.dl && <dl>{b.dl.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>}
+            </>
+          ))}
+        </div>
+      ) : (
+        <div class="prose">
+          <h2>{l.companyTitle}</h2>
+          <dl>{l.company.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+          <h2>{l.termsTitle}</h2>
+          {l.terms.map(([h, x]) => <><h3>{h}</h3><p>{x}</p></>)}
+          <h2>{l.webTitle}</h2>
+          {l.web.map(([h, x]) => <><h3>{h}</h3><p>{x}</p></>)}
+          <h2>{l.relatedTitle}</h2>
+          <p><a href={url(staticRoutes.privacy[lang])}>{t.privacy}</a></p>
+        </div>
+      )}
+    </div>
+  </section>
+  <Cta lang={lang} title={isPrivacy ? p.ctaTitle : l.ctaTitle} text={isPrivacy ? p.ctaText : l.ctaText} />
+</Base>

@@ -1,0 +1,31 @@
+id: 1
+order: 6
+featured: false
+sector: residential
+services: [concept-design]
+slugs: { en: private-residence, nl: privewoning }
+title: { en: Private Residence, nl: Privéwoning }
+summary:
+  en: "A dated Amsterdam townhouse reworked into a warm, contemporary home that respects the building’s heritage."
+  nl: "Een gedateerd Amsterdams herenhuis herwerkt tot een warme, eigentijdse woning die het erfgoed van het gebouw respecteert."
+brief:
+  en: "Transform a dated Amsterdam townhouse into a contemporary sanctuary that honours the building’s heritage while embracing modern living."
+  nl: "Een gedateerd Amsterdams herenhuis transformeren tot een eigentijdse thuishaven die het erfgoed van het pand eert en toch modern wonen omarmt."
+challenge:
+  en: "The client sought a space that balanced warmth with sophistication."
+  nl: "De opdrachtgever zocht een ruimte die warmte met verfijning in balans brengt."
+outcome:
+  en: "A seamless blend of classic architecture and contemporary design. Custom millwork and curated furniture create intimate yet airy spaces that feel both timeless and distinctly modern."
+  nl: "Een naadloze mix van klassieke architectuur en eigentijds ontwerp. Maatwerk timmerwerk en zorgvuldig gekozen meubels creëren intieme maar luchtige ruimtes die tegelijk tijdloos en uitgesproken modern aanvoelen."
+facts:
+  - { key: location, label: { en: Location, nl: Locatie }, value: { en: "Amsterdam, NL", nl: "Amsterdam, NL" } }
+  - { key: year, label: { en: Year, nl: Jaar }, value: { en: "2018", nl: "2018" } }
+  - { key: scope, label: { en: Scope, nl: Omvang }, value: { en: "Full interior", nl: "Volledig interieur" } }
+  - { key: size, label: { en: Living space, nl: Woonoppervlak }, value: { en: "280 m²", nl: "280 m²" } }
+hero: ../../assets/projects/private-residence/living-dining.jpg
+heroAlt:
+  en: "Visualisation of an open-plan living space with exposed ceiling ducts, a bed in a timber alcove and a wooden dining table with wishbone chairs in warm light."
+  nl: "Visualisatie van een open woonruimte met zichtbare plafondkanalen, een bed in een houten nis en een houten eettafel met wishbone-stoelen in warm licht."
+heroPosition: center
+gallery: []
+video: null

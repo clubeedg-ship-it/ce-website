@@ -1,0 +1,44 @@
+PASS  stepper: only step 1 visible
+PASS  step 1: empty "next" shows validation + summary
+PASS  first invalid field receives focus, error text linked (aria-describedby)
+PASS  advances to step 2
+PASS  step 2: location required
+PASS  step 2: non-numeric size rejected
+PASS  advances to step 3
+PASS  step 3: invalid email + missing consent blocked client-side
+PASS  aria-invalid set on email
+PASS  real server OK -> thank-you page
+PASS  lead written to JSONL log
+PASS  thank-you page is noindex
+PASS  server 500: error notice shown (no fake success)
+PASS  error notice offers WhatsApp + email fallback
+PASS  submit button re-enabled after failure
+PASS  NL contact page is Dutch
+PASS  NL submit -> /nl/contact/bedankt/
+PASS  no-JS: all three steps visible
+PASS  no-JS: no "next" button
+PASS  no-JS: plain POST -> thank-you page
+PASS  slider: keyboard changes value (Home -> 0)
+PASS  slider: divider position follows
+PASS  slider: End -> 100
+PASS  slider has an accessible name
+PASS  lightbox opens with Enter
+PASS  lightbox: ArrowRight shows next image
+PASS  lightbox: Escape closes
+PASS  lightbox: focus returns to opener
+PASS  filter: commercial shows fewer cards (10 -> 2)
+PASS  filter: aria-pressed updated
+PASS  menu opens (aria-expanded)
+PASS  menu: focus moved inside
+PASS  menu: Escape closes + returns focus
+PASS  mobile action bar visible
+PASS  no horizontal overflow at 390 px
+PASS  reduced motion: hero video not playing
+PASS  reduced motion: play button offered (aria-pressed=true)
+PASS  hero video plays
+PASS  pause button pauses
+PASS  play button resumes
+PASS  off-screen hero video is paused
+PASS  no JS errors or console errors in the whole run
+
+RESULT: 42 passed, 0 failed

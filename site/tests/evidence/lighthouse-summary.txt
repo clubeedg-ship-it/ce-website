@@ -1,0 +1,15 @@
+/                             cpu4x perf=95 a11y=100 bp=100 seo=100 LCP=1.8 s CLS=0 TBT=60 ms FCP=1.8 s
+/                             cpu1x perf=97 a11y=100 bp=100 seo=100 LCP=1.6 s CLS=0 TBT=0 ms FCP=1.6 s
+/projects/                    cpu4x perf=99 a11y=100 bp=100 seo=100 LCP=1.6 s CLS=0.005 TBT=20 ms FCP=1.6 s
+/projects/                    cpu1x perf=100 a11y=100 bp=100 seo=100 LCP=1.5 s CLS=0.005 TBT=0 ms FCP=1.5 s
+/projects/hospitality-collection/ cpu4x perf=99 a11y=100 bp=100 seo=100 LCP=1.8 s CLS=0 TBT=60 ms FCP=1.8 s
+/projects/hospitality-collection/ cpu1x perf=99 a11y=100 bp=100 seo=100 LCP=1.8 s CLS=0 TBT=0 ms FCP=1.6 s
+/contact/                     cpu4x perf=99 a11y=100 bp=100 seo=100 LCP=1.7 s CLS=0 TBT=80 ms FCP=1.7 s
+/contact/                     cpu1x perf=100 a11y=100 bp=100 seo=100 LCP=1.5 s CLS=0 TBT=0 ms FCP=1.5 s
+/nl/                          cpu4x perf=93 a11y=100 bp=100 seo=100 LCP=2.3 s CLS=0.017 TBT=40 ms FCP=2.3 s
+/nl/                          cpu1x perf=97 a11y=100 bp=100 seo=100 LCP=1.6 s CLS=0.017 TBT=0 ms FCP=1.6 s
+/nl/projecten/                cpu4x perf=99 a11y=100 bp=100 seo=100 LCP=1.7 s CLS=0.005 TBT=30 ms FCP=1.7 s
+/nl/projecten/                cpu1x perf=100 a11y=100 bp=100 seo=100 LCP=1.5 s CLS=0.005 TBT=0 ms FCP=1.5 s
+/nl/contact/                  cpu4x perf=98 a11y=100 bp=100 seo=100 LCP=1.9 s CLS=0 TBT=0 ms FCP=1.9 s
+/nl/contact/                  cpu1x perf=100 a11y=100 bp=100 seo=100 LCP=1.5 s CLS=0 TBT=0 ms FCP=1.5 s
+LH_DONE

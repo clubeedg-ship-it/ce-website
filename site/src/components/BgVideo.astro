@@ -1,0 +1,11 @@
+---
+// Decorative looping background video. Starts only after page load, never when off-screen, never under
+// prefers-reduced-motion / data-saver (poster stays). Sources are attached by site.js (WebM first, MP4 fallback).
+import { asset } from '../lib/routes';
+interface Props { lg: string; sm?: string; id: string }
+const { lg, sm = lg, id } = Astro.props;
+---
+<video id={id} muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"
+  data-bgvideo
+  data-webm-lg={asset(`media/${lg}.webm`)} data-mp4-lg={asset(`media/${lg}.mp4`)}
+  data-webm-sm={asset(`media/${sm}.webm`)} data-mp4-sm={asset(`media/${sm}.mp4`)}></video>

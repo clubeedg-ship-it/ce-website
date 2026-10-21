@@ -1,0 +1,13 @@
+---
+import Img from './Img.astro';
+interface Props { before: ImageMetadata; after: ImageMetadata; beforeAlt: string; afterAlt: string; beforeLabel: string; afterLabel: string; label: string; wide?: boolean }
+const { before, after, beforeAlt, afterAlt, beforeLabel, afterLabel, label, wide = false } = Astro.props;
+---
+<div class:list={['compare', wide && 'compare--2']} data-compare>
+  <Img src={after} alt={afterAlt} sizes="(min-width: 1440px) 1344px, 94vw" widths={[800, 1200, 1800]} />
+  <div class="compare__top"><Img src={before} alt={beforeAlt} sizes="(min-width: 1440px) 1344px, 94vw" widths={[800, 1200, 1600]} /></div>
+  <span class="compare__lbl compare__lbl--l" aria-hidden="true">{beforeLabel}</span>
+  <span class="compare__lbl compare__lbl--r" aria-hidden="true">{afterLabel}</span>
+  <div class="compare__bar" aria-hidden="true"></div>
+  <input type="range" min="0" max="100" value="50" step="1" aria-label={label} />
+</div>

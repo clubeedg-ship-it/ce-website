@@ -1,0 +1,7 @@
+# Video files keep stable names: cache for 30 days (rename a file when you replace it).
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=2592000"
+</IfModule>
+<IfModule mod_headers.c>
+  Header set Accept-Ranges "bytes"
+</IfModule>

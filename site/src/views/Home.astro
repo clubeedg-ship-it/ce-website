@@ -1,0 +1,145 @@
+---
+import Base from '../components/Base.astro';
+import Img from '../components/Img.astro';
+import BgVideo from '../components/BgVideo.astro';
+import PauseBtn from '../components/PauseBtn.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Compare from '../components/Compare.astro';
+import { getProjects, type Page } from '../lib/projects';
+import { pictureSet } from '../lib/img';
+import { projectPath, staticRoutes, url, waLink, type Lang } from '../lib/routes';
+import { ui, home, services as svc, contactPage } from '../i18n/copy';
+import heroPoster from '../assets/posters/hero.jpg';
+import salonPoster from '../assets/posters/salon.jpg';
+import sketch from '../assets/process/restaurant-sketch.jpg';
+import visual from '../assets/process/restaurant-visual-light.jpg';
+
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang: Lang = page.lang;
+const t = ui[lang];
+const c = home[lang];
+const all = await getProjects();
+const featured = all.filter((p) => p.data.featured).slice(0, 4);
+const jewel = all.find((p) => p.data.slugs.en === 'jewellery-boutique')!;
+const poster = await pictureSet(heroPoster, [480, 800, 1200, 1800]);
+const order = ['technical-drawings', 'turn-key-build', 'concept-design'] as const;
+const route = { 'technical-drawings': 'service-technical', 'turn-key-build': 'service-turnkey', 'concept-design': 'service-concept' } as const;
+const num = { 'technical-drawings': '01', 'turn-key-build': '02', 'concept-design': '03' } as const;
+---
+<Base page={page}>
+  <link slot="head" rel="preload" as="image" type="image/avif" imagesrcset={poster.avif} imagesizes="100vw" fetchpriority="high" />
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__media">
+      <Img src={heroPoster} alt="" sizes="100vw" widths={[480, 800, 1200, 1800]} eager />
+      <BgVideo id="hero-video" lg="hero-1080" sm="hero-720" />
+    </div>
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">{t.hero}</p>
+        <h1 id="hero-title" class="display">{c.h1}</h1>
+        <p class="lead">{c.lead}</p>
+        <div class="btn-row">
+          <a class="btn" href={url(staticRoutes.projects[lang])}>{c.ctaPrimary} <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href={url(staticRoutes.contact[lang])}>{c.ctaSecondary}</a>
+        </div>
+      </div>
+      <div class="hero__side">
+        <span>{c.captionLabel}</span>
+        <a href={url(projectPath(lang, jewel.data.slugs))}>{jewel.data.title[lang]}</a>
+        <PauseBtn lang={lang} target="hero-video" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="statement-title">
+    <div class="wrap statement">
+      <div class="statement__q reveal">
+        <p class="eyebrow" id="statement-title">{c.statementEyebrow}</p>
+        <p>{c.statement}</p>
+      </div>
+      <p class="statement__b reveal d1">{c.statementBody}</p>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">{c.workEyebrow}</p>
+          <h2 id="work-title" class="h2">{c.workTitle}</h2>
+        </div>
+        <a class="link-arrow" href={url(staticRoutes.projects[lang])}>{t.allProjects} <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="mosaic">
+        {featured.map((p) => <div class="card-wrap reveal">{null}<ProjectCard project={p} lang={lang} sizes="(min-width: 760px) 50vw, 100vw" /></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="svc-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">{c.servicesEyebrow}</p>
+          <h2 id="svc-title" class="h2">{c.servicesTitle}</h2>
+        </div>
+        <p class="muted maxw">{c.servicesIntro}</p>
+      </div>
+      <div class="svc">
+        {order.map((k) => (
+          <a class="svc__row reveal" href={url(staticRoutes[route[k]][lang])}>
+            <span class="svc__n">{num[k]}</span>
+            <h3 class="svc__t">{svc[lang][k].title}</h3>
+            <div class="svc__d">
+              <p>{svc[lang][k].tag}</p>
+              <ul>{svc[lang][k].items.map((i: any) => <li>{i.t}</li>)}</ul>
+            </div>
+            <span class="svc__a" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="proc-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">{c.processEyebrow}</p>
+          <h2 id="proc-title" class="h2">{c.processTitle}</h2>
+        </div>
+        <p class="muted maxw">{c.processIntro}</p>
+      </div>
+      <ol class="steps">
+        {c.steps.map((s: any) => <li class="step reveal"><h3>{s.title}</h3><p>{s.text}</p></li>)}
+      </ol>
+      <div class="reveal">
+        <Compare before={sketch} after={visual} wide
+          beforeAlt={lang === 'en' ? 'Hand sketch of a long restaurant interior with a bar counter, in perspective, with handwritten notes.' : 'Handschets in perspectief van een lang restaurantinterieur met een barcounter, met handgeschreven aantekeningen.'}
+          afterAlt={lang === 'en' ? '3D visualisation of the same restaurant interior with a black ceiling, orange pendant lights and a long white banquette.' : '3D-visualisatie van hetzelfde restaurantinterieur met een zwart plafond, oranje hanglampen en een lange witte zitbank.'}
+          beforeLabel={t.sketch} afterLabel={t.visualisation} label={t.compareLabel} />
+        <p class="caption">{c.compareCaption}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="cta__media">
+      <Img src={salonPoster} alt="" sizes="100vw" widths={[800, 1200, 1800]} />
+      <BgVideo id="cta-video" lg="project-salon" sm="project-salon-sm" />
+    </div>
+    <div class="wrap">
+      <div class="cta__in reveal">
+        <p class="eyebrow">{c.closeEyebrow}</p>
+        <h2 id="cta-title">{c.closeTitle}</h2>
+        <p>{c.closeText}</p>
+        <div class="btn-row">
+          <a class="btn" href={url(staticRoutes.contact[lang])}>{t.cta} <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href={waLink(contactPage[lang].waText)} rel="noopener">{t.whatsapp}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

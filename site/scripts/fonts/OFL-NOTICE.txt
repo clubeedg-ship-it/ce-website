@@ -1,0 +1,4 @@
+PlayfairDisplay.ttf: Playfair Display, (c) The Playfair Project Authors, SIL Open Font License 1.1.
+Source: https://github.com/google/fonts/tree/main/ofl/playfairdisplay
+Used only at build time to draw the Open Graph images. The website itself serves self-hosted WOFF2 subsets
+(src/assets/fonts, from @fontsource-variable/inter and @fontsource-variable/playfair-display, both OFL 1.1).

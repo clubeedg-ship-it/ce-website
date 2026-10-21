@@ -1,0 +1,108 @@
+# CuttingEdge production .htaccess (LiteSpeed / Apache). Upload to public_html/.
+# Redirect block between the markers is generated from site/redirects.tsv:  node scripts/gen-redirects.mjs
+
+ErrorDocument 404 /404.html
+Options -Indexes -MultiViews
+DirectoryIndex index.html index.php
+AddDefaultCharset UTF-8
+
+<IfModule mod_mime.c>
+  AddType image/avif .avif
+  AddType image/webp .webp
+  AddType video/webm .webm
+  AddType video/mp4 .mp4
+  AddType font/woff2 .woff2
+  AddType text/plain .txt
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # HTTPS + apex host (canonical = https://cuttingedge.world)
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+  # BEGIN legacy redirects (generated)
+  RewriteCond %{THE_REQUEST} \s/index\.html[\s?]
+  RewriteRule ^index\.html$ / [R=301,L]
+  RewriteRule ^approach$ /approach/ [R=301,L]
+  RewriteRule ^approach\.html$ /approach/ [R=301,L]
+  RewriteRule ^projects$ /projects/ [R=301,L]
+  RewriteRule ^projects\.html$ /projects/ [R=301,L]
+  RewriteRule ^contact$ /contact/ [R=301,L]
+  RewriteRule ^contact\.html$ /contact/ [R=301,L]
+  RewriteRule ^privacy$ /privacy/ [R=301,L]
+  RewriteRule ^privacy\.html$ /privacy/ [R=301,L]
+  RewriteRule ^legal$ /legal/ [R=301,L]
+  RewriteRule ^legal\.html$ /legal/ [R=301,L]
+  RewriteRule ^project-1\.html$ /projects/private-residence/ [R=301,L]
+  RewriteRule ^project-2\.html$ /projects/jewellery-boutique/ [R=301,L]
+  RewriteRule ^project-3\.html$ /projects/heritage-villa/ [R=301,L]
+  RewriteRule ^project-4\.html$ /projects/hospitality-collection/ [R=301,L]
+  RewriteRule ^project-5\.html$ /projects/restaurant-looks/ [R=301,L]
+  RewriteRule ^project-6\.html$ /projects/kitchen-design/ [R=301,L]
+  RewriteRule ^project-7\.html$ /projects/executive-suite/ [R=301,L]
+  RewriteRule ^project-8\.html$ /projects/johannes-obrecht/ [R=301,L]
+  RewriteRule ^project-10\.html$ /projects/thai-restaurant/ [R=301,L]
+  RewriteRule ^projects/project-1\.html$ /projects/private-residence/ [R=301,L]
+  RewriteRule ^projects/project-2\.html$ /projects/jewellery-boutique/ [R=301,L]
+  RewriteRule ^projects/project-3\.html$ /projects/heritage-villa/ [R=301,L]
+  RewriteRule ^projects/project-4\.html$ /projects/hospitality-collection/ [R=301,L]
+  RewriteRule ^projects/project-5\.html$ /projects/restaurant-looks/ [R=301,L]
+  RewriteRule ^projects/project-6\.html$ /projects/kitchen-design/ [R=301,L]
+  RewriteRule ^projects/project-7\.html$ /projects/executive-suite/ [R=301,L]
+  RewriteRule ^projects/project-8\.html$ /projects/johannes-obrecht/ [R=301,L]
+  RewriteRule ^projects/project-10\.html$ /projects/thai-restaurant/ [R=301,L]
+  RewriteRule ^Media/1/ /projects/private-residence/ [R=301,L]
+  RewriteRule ^Media/2/ /projects/jewellery-boutique/ [R=301,L]
+  RewriteRule ^Media/3/ /projects/heritage-villa/ [R=301,L]
+  RewriteRule ^Media/4/ /projects/hospitality-collection/ [R=301,L]
+  RewriteRule ^Media/5/ /projects/restaurant-looks/ [R=301,L]
+  RewriteRule ^Media/6/ /projects/kitchen-design/ [R=301,L]
+  RewriteRule ^Media/7/ /projects/executive-suite/ [R=301,L]
+  RewriteRule ^Media/8/ /projects/johannes-obrecht/ [R=301,L]
+  RewriteRule ^Media/9/ /projects/beauty-salon/ [R=301,L]
+  RewriteRule ^Media/10/ /projects/thai-restaurant/ [R=301,L]
+  RewriteRule ^Media/process/ /approach/ [R=301,L]
+  RewriteRule ^Media/ /projects/ [R=301,L]
+  RewriteRule ^static/ / [R=301,L]
+  # END legacy redirects
+</IfModule>
+
+# ---- compression ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/json application/javascript text/javascript application/ld+json image/svg+xml
+</IfModule>
+
+# ---- caching: HTML revalidates, hashed assets are immutable (see _astro/.htaccess), media/other files below ----
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "accelerometer=(), autoplay=(self), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  # strict self-only CSP. setifempty lets api/contact.php's own error page set a looser one.
+  Header always setifempty Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+
+  <FilesMatch "\.(html|xml|txt|json)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(png|svg|ico|js|css)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+# never serve dotfiles other than .well-known
+<FilesMatch "^\.(?!well-known)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>

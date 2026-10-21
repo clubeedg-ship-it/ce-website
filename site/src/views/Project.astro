@@ -1,0 +1,123 @@
+---
+import Base from '../components/Base.astro';
+import Img from '../components/Img.astro';
+import BgVideo from '../components/BgVideo.astro';
+import PauseBtn from '../components/PauseBtn.astro';
+import Cta from '../components/Cta.astro';
+import { getProjects, type Page } from '../lib/projects';
+import { pictureSet, singleUrl } from '../lib/img';
+import { projectPath, staticRoutes, serviceKeyToRoute, url, type Lang } from '../lib/routes';
+import { ui, projectLabels, services as svc } from '../i18n/copy';
+
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang: Lang = page.lang;
+const t = ui[lang];
+const L = projectLabels[lang];
+const p = page.project!;
+const d = p.data;
+const all = await getProjects();
+const idx = all.findIndex((x) => x.id === p.id);
+const next = all[(idx + 1) % all.length];
+const poster = await pictureSet(d.hero, [480, 800, 1200, 1800]);
+const gal = await Promise.all(d.gallery.map(async (g) => ({ ...g, full: await singleUrl(g.src, 1800), tall: g.src.height > g.src.width * 1.05 })));
+const trail = [
+  { name: t.navHome, path: staticRoutes.home[lang] },
+  { name: t.navProjects, path: staticRoutes.projects[lang] },
+  { name: d.title[lang], path: page.path },
+];
+const story: [string, string | undefined][] = [
+  [L.brief, d.brief?.[lang]],
+  [L.challenge, d.challenge?.[lang]],
+  [L.approach, d.services.length ? svc[lang][d.services[0]].intro : undefined],
+  [L.outcome, d.outcome?.[lang]],
+];
+const hasStory = story.some(([, v]) => v);
+---
+<Base page={page} trail={trail}>
+  <link slot="head" rel="preload" as="image" type="image/avif" imagesrcset={poster.avif} imagesizes="100vw" fetchpriority="high" />
+
+  <section class="p-hero" aria-labelledby="p-title">
+    <div class="p-hero__img"><Img src={d.hero} alt={d.heroAlt[lang]} sizes="100vw" widths={[480, 800, 1200, 1800]} eager pos={d.heroPosition} /></div>
+    <div class="wrap p-hero__in">
+      <nav class="crumbs" aria-label={t.breadcrumb}>
+        <ol>
+          <li><a href={url(staticRoutes.projects[lang])}>{t.navProjects}</a></li>
+          <li aria-current="page">{d.title[lang]}</li>
+        </ol>
+      </nav>
+      <h1 id="p-title">{d.title[lang]}</h1>
+      <div class="tags">
+        <span class="tag">{t[d.sector]}</span>
+        {d.services.map((s) => <span class="tag">{t[s]}</span>)}
+      </div>
+    </div>
+    {d.heroCredit && <p class="photo-credit">{t.photoCredit}: {d.heroCredit}</p>}
+  </section>
+
+  <section class="section">
+    <div class="wrap story">
+      <div class="story__main">
+        <section class="first reveal"><p>{d.summary[lang]}</p></section>
+        {hasStory && story.filter(([, v]) => v).map(([h, v]) => <section class="reveal"><h2>{h}</h2><p>{v}</p></section>)}
+      </div>
+      <aside class="story__side reveal" aria-label={L.facts}>
+        <h2 class="sr-only">{L.facts}</h2>
+        <dl class="facts">
+          <div><dt>{t.sector}</dt><dd>{t[d.sector]}</dd></div>
+          {d.services.length > 0 && <div><dt>{t.services}</dt><dd>{d.services.map((s, i) => <>{i > 0 && ', '}<a href={url(staticRoutes[serviceKeyToRoute[s]][lang])}>{t[s]}</a></>)}</dd></div>}
+          {d.facts.map((f) => <div><dt>{f.label[lang]}</dt><dd>{f.value[lang]}</dd></div>)}
+          {d.heroCredit && <div><dt>{t.photo}</dt><dd>{d.heroCredit}</dd></div>}
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  {d.video && (
+    <section class="section section--tight" aria-label={L.videoLabel}>
+      <div class="wrap">
+        <figure class="vid reveal">
+          <div class="vid__frame">
+            <Img src={d.video.poster} alt="" sizes="(min-width: 1440px) 1344px, 94vw" widths={[800, 1200, 1800]} />
+            <BgVideo id="p-video" lg={d.video.src} sm={d.video.sm} />
+            <PauseBtn lang={lang} target="p-video" />
+          </div>
+          <figcaption class="caption">{d.video.alt[lang]}</figcaption>
+        </figure>
+      </div>
+    </section>
+  )}
+
+  {gal.length > 0 && (
+    <section class="section section--tight" aria-labelledby="gal-title">
+      <div class="wrap">
+        <h2 id="gal-title" class="h3 mb-s">{t.gallery}</h2>
+        <div class="gallery" data-gallery>
+          {gal.map((g, i) => (
+            <button type="button" class:list={[g.tall && 'is-tall']} data-full={g.full} data-alt={g.alt[lang]} data-credit={g.credit} aria-haspopup="dialog">
+              <Img src={g.src} alt={g.alt[lang]} sizes={g.tall ? '(min-width: 700px) 30vw, 100vw' : '(min-width: 700px) 48vw, 100vw'} widths={[480, 800, 1200]} />
+              {g.credit && <span class="credit">{t.photoCredit}: {g.credit}</span>}
+            </button>
+          ))}
+        </div>
+      </div>
+      <dialog class="lightbox" aria-label={t.lightboxLabel} data-lightbox>
+        <div class="lb">
+          <button class="lb__btn lb__x" type="button" data-lb-close aria-label={t.close}>×</button>
+          <button class="lb__btn lb__p" type="button" data-lb-prev aria-label={t.prev}>←</button>
+          <button class="lb__btn lb__n" type="button" data-lb-next aria-label={t.next}>→</button>
+          <div class="lb__stage" data-lb-stage></div>
+          <p class="lb__cap" data-lb-cap aria-live="polite"></p>
+        </div>
+      </dialog>
+    </section>
+  )}
+
+  <a class="nextp" href={url(projectPath(lang, next.data.slugs))} hreflang={lang}>
+    <div class="wrap">
+      <div><small>{t.nextProject}</small><span class="nextp__t">{next.data.title[lang]}</span></div>
+      <span class="nextp__arr" aria-hidden="true">→</span>
+    </div>
+  </a>
+  <Cta lang={lang} title={L.ctaTitle} text={L.ctaText} />
+</Base>

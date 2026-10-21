@@ -1,0 +1,44 @@
+# legacy path (no leading slash)	new path	kind	note
+# kind: exact = matches that URL only; prefix = anything below it. All redirects are 301.
+index.html	/	exact	old home file
+approach	approach/	exact	extensionless legacy URL (was served by v2 .htaccess)
+approach.html	approach/	exact
+projects	projects/	exact
+projects.html	projects/	exact
+contact	contact/	exact
+contact.html	contact/	exact
+privacy	privacy/	exact
+privacy.html	privacy/	exact
+legal	legal/	exact
+legal.html	legal/	exact
+project-1.html	projects/private-residence/	exact	Private Residence
+project-2.html	projects/jewellery-boutique/	exact	was "Urban Apartment" (photos show a jewellery boutique)
+project-3.html	projects/heritage-villa/	exact	Heritage Villa
+project-4.html	projects/hospitality-collection/	exact	Hospitality Collection
+project-5.html	projects/restaurant-looks/	exact	Restaurant Looks
+project-6.html	projects/kitchen-design/	exact	was "Boutique Hotel Suite" (photos show a kitchen)
+project-7.html	projects/executive-suite/	exact	Executive Suite
+project-8.html	projects/johannes-obrecht/	exact	Johannes Obrecht
+project-10.html	projects/thai-restaurant/	exact	was "Modern Villa" (photos show a Thai restaurant)
+projects/project-1.html	projects/private-residence/	exact	v2 URL style
+projects/project-2.html	projects/jewellery-boutique/	exact
+projects/project-3.html	projects/heritage-villa/	exact
+projects/project-4.html	projects/hospitality-collection/	exact
+projects/project-5.html	projects/restaurant-looks/	exact
+projects/project-6.html	projects/kitchen-design/	exact
+projects/project-7.html	projects/executive-suite/	exact
+projects/project-8.html	projects/johannes-obrecht/	exact
+projects/project-10.html	projects/thai-restaurant/	exact
+Media/1/	projects/private-residence/	prefix	legacy media files -> the project they illustrated
+Media/2/	projects/jewellery-boutique/	prefix
+Media/3/	projects/heritage-villa/	prefix
+Media/4/	projects/hospitality-collection/	prefix
+Media/5/	projects/restaurant-looks/	prefix
+Media/6/	projects/kitchen-design/	prefix
+Media/7/	projects/executive-suite/	prefix
+Media/8/	projects/johannes-obrecht/	prefix
+Media/9/	projects/beauty-salon/	prefix
+Media/10/	projects/thai-restaurant/	prefix
+Media/process/	approach/	prefix
+Media/	projects/	prefix	any other legacy media (hero/background videos, logo)
+static/	/	prefix	legacy CSS/JS
