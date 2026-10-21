@@ -1,0 +1,60 @@
+# CuttingEdge
+
+> CuttingEdge is an interior design and turn-key build studio in Amsterdam. It offers concept design, technical drawings and turn-key build for hospitality, residential and commercial spaces. The site is available in English and Dutch (Nederlands).
+
+## Company
+- Address: Ookmeerweg 101, 1068AP Amsterdam, The Netherlands
+- Email: klucas.lucas@gmail.com
+- Phone / WhatsApp: +31 6 47 63 97 02
+- KvK (Chamber of Commerce): 34153096
+- VAT (BTW): NL810574163B01
+- Typical response time to enquiries: within 24 hours
+
+## Services (EN)
+- [Concept Design](https://clubeedg-ship-it.github.io/ce-website/services/concept-design/): Where brand identity becomes spatial experience.
+- [Technical Drawings](https://clubeedg-ship-it.github.io/ce-website/services/technical-drawings/): Precision meets vision. Every detail documented for flawless execution.
+- [Turn-key Build](https://clubeedg-ship-it.github.io/ce-website/services/turn-key-build/): From concept to keys in hand. We manage every step so you don’t have to.
+
+## Pages (EN)
+- https://clubeedg-ship-it.github.io/ce-website/
+- https://clubeedg-ship-it.github.io/ce-website/projects/
+- https://clubeedg-ship-it.github.io/ce-website/approach/
+- https://clubeedg-ship-it.github.io/ce-website/services/
+- https://clubeedg-ship-it.github.io/ce-website/contact/
+- https://clubeedg-ship-it.github.io/ce-website/privacy/
+- https://clubeedg-ship-it.github.io/ce-website/legal/
+
+## Projects (EN)
+- [Hospitality Collection](https://clubeedg-ship-it.github.io/ce-website/projects/hospitality-collection/): A bar and lounge in Amsterdam, built turn-key around dramatic lighting, bespoke bar furniture and a gold mesh back wall.
+- [Restaurant Looks](https://clubeedg-ship-it.github.io/ce-website/projects/restaurant-looks/): A restaurant for fine dining with an approachable atmosphere, shaped by warm wood tones, soft light and a sculpted wall.
+- [Thai Restaurant](https://clubeedg-ship-it.github.io/ce-website/projects/thai-restaurant/): A restaurant interior with a timber slatted ceiling, planted partitions and a glowing green entrance sign.
+- [Jewellery Boutique](https://clubeedg-ship-it.github.io/ce-website/projects/jewellery-boutique/): A jewellery boutique with quilted tan-leather walls, recessed illuminated display windows and dark wood counters.
+- [Beauty Salon](https://clubeedg-ship-it.github.io/ce-website/projects/beauty-salon/): A beauty salon in a soft cream palette, with a sculptural spiral staircase and a curved white sofa, shown in a visualisation film.
+- [Private Residence](https://clubeedg-ship-it.github.io/ce-website/projects/private-residence/): A dated Amsterdam townhouse reworked into a warm, contemporary home that respects the building’s heritage.
+- [Heritage Villa](https://clubeedg-ship-it.github.io/ce-website/projects/heritage-villa/): Restoration of a 1920s villa that integrates modern amenities invisibly and respects its original architectural language.
+- [Executive Suite](https://clubeedg-ship-it.github.io/ce-website/projects/executive-suite/): A suite that merges workspace functionality with hospitality comfort, with discrete work zones and a calm lounge.
+- [Johannes Obrecht](https://clubeedg-ship-it.github.io/ce-website/projects/johannes-obrecht/): A classic Amsterdam residence renovated into a modern family home, with open living spaces and original details preserved.
+- [Kitchen Design](https://clubeedg-ship-it.github.io/ce-website/projects/kitchen-design/): A calm kitchen in pale oak with a white worktop, built-in appliances and slatted oak panelling.
+
+## Nederlands
+> CuttingEdge is een studio voor interieurontwerp en turn-key bouw in Amsterdam: conceptontwerp, technische tekeningen en turn-key interieurbouw voor horeca, woningen en commerciële ruimtes.
+- [Conceptontwerp](https://clubeedg-ship-it.github.io/ce-website/nl/diensten/conceptontwerp/): Waar merkidentiteit ruimtelijke beleving wordt.
+- [Technische tekeningen](https://clubeedg-ship-it.github.io/ce-website/nl/diensten/technische-tekeningen/): Precisie ontmoet visie. Elk detail vastgelegd voor een vlekkeloze uitvoering.
+- [Turn-key bouw](https://clubeedg-ship-it.github.io/ce-website/nl/diensten/turn-key-bouw/): Van concept tot sleuteloverdracht. Wij regelen elke stap, zodat u dat niet hoeft te doen.
+- https://clubeedg-ship-it.github.io/ce-website/nl/
+- https://clubeedg-ship-it.github.io/ce-website/nl/projecten/
+- https://clubeedg-ship-it.github.io/ce-website/nl/aanpak/
+- https://clubeedg-ship-it.github.io/ce-website/nl/diensten/
+- https://clubeedg-ship-it.github.io/ce-website/nl/contact/
+- https://clubeedg-ship-it.github.io/ce-website/nl/privacybeleid/
+- https://clubeedg-ship-it.github.io/ce-website/nl/juridisch/
+- [Horecacollectie](https://clubeedg-ship-it.github.io/ce-website/nl/projecten/horecacollectie/): Een bar en lounge in Amsterdam, turn-key gebouwd rond dramatische verlichting, maatwerk barmeubilair en een gouden gaaswand.
+- [Restaurant Looks](https://clubeedg-ship-it.github.io/ce-website/nl/projecten/restaurant-looks/): Een restaurant voor fine dining met een toegankelijke sfeer, vormgegeven met warme houttinten, zacht licht en een gebeeldhouwde wand.
+- [Thais restaurant](https://clubeedg-ship-it.github.io/ce-website/nl/projecten/thais-restaurant/): Een restaurantinterieur met een houten lamellenplafond, beplante scheidingswanden en een oplichtend groen entreebord.
+- [Juwelierszaak](https://clubeedg-ship-it.github.io/ce-website/nl/projecten/juwelierszaak/): Een juwelierszaak met gewatteerde cognackleurige leren wanden, verzonken verlichte etalagevensters en donkere houten balies.
+- [Schoonheidssalon](https://clubeedg-ship-it.github.io/ce-website/nl/projecten/schoonheidssalon/): Een schoonheidssalon in een zacht crèmepalet, met een sculpturale wenteltrap en een gebogen witte bank, getoond in een visualisatiefilm.
+- [Privéwoning](https://clubeedg-ship-it.github.io/ce-website/nl/projecten/privewoning/): Een gedateerd Amsterdams herenhuis herwerkt tot een warme, eigentijdse woning die het erfgoed van het gebouw respecteert.
+- [Historische villa](https://clubeedg-ship-it.github.io/ce-website/nl/projecten/historische-villa/): Restauratie van een villa uit de jaren twintig waarin moderne voorzieningen onzichtbaar zijn geïntegreerd en de oorspronkelijke bouwstijl wordt gerespecteerd.
+- [Directiesuite](https://clubeedg-ship-it.github.io/ce-website/nl/projecten/directiesuite/): Een suite die werkfunctionaliteit combineert met horecacomfort, met discrete werkzones en een rustige loungehoek.
+- [Johannes Obrecht](https://clubeedg-ship-it.github.io/ce-website/nl/projecten/johannes-obrecht/): Een klassieke Amsterdamse woning gerenoveerd tot een modern gezinshuis, met open leefruimtes en behouden originele details.
+- [Keukenontwerp](https://clubeedg-ship-it.github.io/ce-website/nl/projecten/keukenontwerp/): Een rustige keuken in licht eiken met een wit werkblad, inbouwapparatuur en eikenhouten lamellenpanelen.

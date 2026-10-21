@@ -1,0 +1,1 @@
+document.querySelectorAll(`[data-compare]`).forEach(e=>{let t=e.querySelector(`input[type=range]`),n=()=>{e.style.setProperty(`--pos`,t.value+`%`),t.setAttribute(`aria-valuetext`,t.value+`%`)};t.addEventListener(`input`,n),e.classList.add(`is-ready`),n()});
