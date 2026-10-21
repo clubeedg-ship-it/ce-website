@@ -137,8 +137,7 @@
 
                 <div class="contact-form-container">
                     <h3 class="form-title">Send Us a Message</h3>
-                    <form class="contact-form"
-                        onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will be in touch within 24 hours.');">
+                    <form class="contact-form" id="contact-form" onsubmit="return ceSendEnquiry(event)">
                         <div class="form-group">
                             <label for="name">Your Name *</label>
                             <input type="text" id="name" name="name" placeholder="How should we address you?" required>
@@ -175,7 +174,9 @@
                             </label>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary">Send via WhatsApp</button>
+                        <p class="form-alt" style="margin-top:1rem;font-size:.9rem;opacity:.8">Prefer email?
+                            <a href="#" id="contact-email-alt" style="color:inherit;text-decoration:underline">Send it by email instead</a></p>
                     </form>
                 </div>
             </div>
@@ -580,6 +581,37 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        // HOTFIX 2026-10-21: the form used to show a "thank you" alert and discard the message.
+        // It now hands the enquiry to WhatsApp (primary) or the visitor's email app (fallback).
+        (function () {
+            var WA = '31647639702', MAIL = 'klucas.lucas@gmail.com';
+            function compose(f) {
+                var type = f.querySelector('#project-type');
+                var t = type && type.value ? type.options[type.selectedIndex].text : '-';
+                return 'New enquiry via cuttingedge.world\n\n' +
+                    'Name: ' + f.name.value.trim() + '\n' +
+                    'Email: ' + f.email.value.trim() + '\n' +
+                    'Project type: ' + t + '\n\n' + f.message.value.trim();
+            }
+            window.ceSendEnquiry = function (e) {
+                e.preventDefault();
+                var f = e.target;
+                var w = window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(compose(f)), '_blank');
+                if (!w) { window.location.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(compose(f)); }
+                return false;
+            };
+            var alt = document.getElementById('contact-email-alt');
+            if (alt) alt.addEventListener('click', function (e) {
+                e.preventDefault();
+                var f = document.getElementById('contact-form');
+                if (!f.reportValidity()) return;
+                window.location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('Project enquiry - ' + f.name.value.trim()) +
+                    '&body=' + encodeURIComponent(compose(f));
+            });
+        })();
     </script>
 </body>
 
