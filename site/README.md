@@ -91,9 +91,9 @@ Deploying: see `DEPLOY.md`. Open questions for the studio: `CONTENT-NEEDED.md`. 
 
 ## Public preview at edge.oopuo.nl
 
-Served from the hermeslocal server through a Cloudflare tunnel (not GitHub Pages, not Hostinger). Always noindex; the form only shows the preview notice (no PHP behind it).
+Served from this server through the shared Cloudflare tunnel `oopuo-web` and managed with the `oopuo` tool (Hermes skill `oopuo-publish`). It is always noindex. The form only shows the preview notice, because there is no PHP behind it.
 
 - build (in `site/`): `PREVIEW=1 PREVIEW_SITE=https://edge.oopuo.nl PREVIEW_BASE=/ FONTCONFIG_FILE=$PWD/scripts/fonts/fonts.conf npx astro build --outDir dist-edge`
-- publish (live at once): `rsync -a --delete --exclude api/ --exclude .htaccess dist-edge/ ~/srv/edge.oopuo.nl/`
-- web: user unit `ce-edge-web.service` = `scripts/serve-dist.py ~/srv/edge.oopuo.nl 8792 --gzip --public` (production security headers read from `public/.htaccess`, plus `X-Robots-Tag: noindex`)
-- tunnel: user unit `cf-oopuo-web.service` (tunnel `oopuo-web`, config `~/.cloudflared/oopuo-web.yml`, ingress `edge.oopuo.nl` -> `127.0.0.1:8792`); setup script `~/srv/oopuo-web/setup.sh`
+- publish (goes live immediately): `rsync -a --delete --exclude api/ dist-edge/ ~/srv/edge.oopuo.nl/`
+- route (one-off, already done): `oopuo add edge --dir ~/srv/edge.oopuo.nl --noindex --headers-from ~/srv/edge.oopuo.nl/.htaccess --replace`. The security headers and CSP come from the build's own `.htaccess`, which is never served.
+- health: `oopuo status`
