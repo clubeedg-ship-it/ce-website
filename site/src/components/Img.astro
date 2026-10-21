@@ -1,0 +1,32 @@
+---
+// Responsive picture: AVIF + WebP srcset with intrinsic width/height. No inline styles (strict CSP).
+import { pictureSet, DEFAULT_WIDTHS } from '../lib/img';
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  sizes: string;
+  widths?: number[];
+  eager?: boolean;     // above the fold: fetchpriority high, no lazy
+  class?: string;
+  pos?: 'center' | 'upper' | 'lower';
+}
+const { src, alt, sizes, widths = DEFAULT_WIDTHS, eager = false, class: cls, pos = 'center' } = Astro.props;
+const set = await pictureSet(src, widths);
+const classes = [cls, pos !== 'center' ? `pos-${pos}` : ''].filter(Boolean).join(' ') || undefined;
+---
+<picture>
+  <source type="image/avif" srcset={set.avif} sizes={sizes} />
+  <source type="image/webp" srcset={set.webp} sizes={sizes} />
+  <img
+    src={set.fallback}
+    srcset={set.webp}
+    sizes={sizes}
+    width={set.width}
+    height={set.height}
+    alt={alt}
+    class={classes}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding={eager ? 'sync' : 'async'}
+    fetchpriority={eager ? 'high' : undefined}
+  />
+</picture>

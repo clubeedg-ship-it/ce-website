@@ -1,0 +1,25 @@
+---
+import Base from '../components/Base.astro';
+import type { Page } from '../lib/projects';
+import { staticRoutes, url, type Lang } from '../lib/routes';
+import { ui, contactPage } from '../i18n/copy';
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang: Lang = page.lang;
+const t = ui[lang];
+const c = contactPage[lang];
+const trail = [{ name: t.navHome, path: staticRoutes.home[lang] }, { name: t.navContact, path: staticRoutes.contact[lang] }, { name: c.thanksH1, path: page.path }];
+---
+<Base page={page} trail={trail} noindex>
+  <section class="nf">
+    <div class="wrap">
+      <p class="eyebrow">{t.navContact}</p>
+      <h1 class="display" tabindex="-1" id="thanks">{c.thanksH1}</h1>
+      <p class="lead mt-1">{c.thanksText}</p>
+      <div class="btn-row mt-2">
+        <a class="btn" href={url(staticRoutes.projects[lang])}>{c.thanksCta} <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost" href={url(staticRoutes.home[lang])}>{t.navHome}</a>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,81 @@
+---
+import Base from '../components/Base.astro';
+import Cta from '../components/Cta.astro';
+import { getProjects, type Page } from '../lib/projects';
+import { projectPath, staticRoutes, url, type Lang } from '../lib/routes';
+import { ui, servicesPage, services as svc } from '../i18n/copy';
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang: Lang = page.lang;
+const t = ui[lang];
+const c = servicesPage[lang];
+const sk = (page.key === 'service-concept' ? 'concept-design' : page.key === 'service-technical' ? 'technical-drawings' : 'turn-key-build') as 'concept-design' | 'technical-drawings' | 'turn-key-build';
+const s = svc[lang][sk];
+const route = { 'technical-drawings': 'service-technical', 'turn-key-build': 'service-turnkey', 'concept-design': 'service-concept' } as const;
+const others = (['concept-design', 'technical-drawings', 'turn-key-build'] as const).filter((k) => k !== sk);
+const related = (await getProjects()).filter((p) => p.data.services.includes(sk));
+const h1 = {
+  'concept-design': lang === 'en' ? 'Interior concept design in Amsterdam.' : 'Conceptontwerp voor interieurs in Amsterdam.',
+  'technical-drawings': lang === 'en' ? 'Technical drawings for interior projects.' : 'Technische tekeningen voor interieurprojecten.',
+  'turn-key-build': lang === 'en' ? 'Turn-key interior build, from concept to keys in hand.' : 'Turn-key interieurbouw, van concept tot sleuteloverdracht.',
+}[sk];
+const trail = [
+  { name: t.navHome, path: staticRoutes.home[lang] },
+  { name: t.navServices, path: staticRoutes.services[lang] },
+  { name: s.title, path: page.path },
+];
+const relLabel = lang === 'en' ? 'Related projects' : 'Gerelateerde projecten';
+---
+<Base page={page} trail={trail}>
+  <header class="pagehead">
+    <div class="wrap">
+      <nav class="crumbs" aria-label={t.breadcrumb}>
+        <ol>
+          <li><a href={url(staticRoutes.home[lang])}>{t.navHome}</a></li>
+          <li><a href={url(staticRoutes.services[lang])}>{t.navServices}</a></li>
+          <li aria-current="page">{s.title}</li>
+        </ol>
+      </nav>
+      <p class="eyebrow">{s.n} · {s.title}</p>
+      <h1>{h1}</h1>
+      <p class="lead">{s.tag}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap split">
+      <div class="split__a reveal">
+        <p class="lead">{s.intro}</p>
+        <div class="kv"><h4>{c.forLabel}</h4><p>{s.forWho}</p></div>
+        <div class="kv"><h4>{c.nextLabel}</h4><p>{s.next}</p></div>
+      </div>
+      <div class="split__b reveal d1">
+        <h2 class="sr-only">{c.includes}</h2>
+        <ul class="items">
+          {s.items.map((i: any) => <li><h3>{i.t}</h3><p>{i.d}</p></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {related.length > 0 && (
+    <section class="section section--tight" aria-labelledby="rel-title">
+      <div class="wrap">
+        <h2 id="rel-title" class="h3 mb-s">{relLabel}</h2>
+        <div class="others">
+          {related.map((p) => <a href={url(projectPath(lang, p.data.slugs))}>{p.data.title[lang]} <span aria-hidden="true">→</span></a>)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section section--tight" aria-labelledby="oth-title">
+    <div class="wrap">
+      <h2 id="oth-title" class="h3 mb-s">{c.otherServices}</h2>
+      <div class="others">
+        {others.map((k) => <a href={url(staticRoutes[route[k]][lang])}>{svc[lang][k].title} <span aria-hidden="true">→</span></a>)}
+      </div>
+    </div>
+  </section>
+  <Cta lang={lang} title={c.ctaTitle} text={c.ctaText} />
+</Base>

@@ -1,0 +1,24 @@
+---
+import { getPages } from '../lib/projects';
+import Home from '../views/Home.astro';
+import Approach from '../views/Approach.astro';
+import Services from '../views/Services.astro';
+import Service from '../views/Service.astro';
+import Projects from '../views/Projects.astro';
+import Project from '../views/Project.astro';
+import Contact from '../views/Contact.astro';
+import Thanks from '../views/Thanks.astro';
+import Prose from '../views/Prose.astro';
+
+export async function getStaticPaths() {
+  const pages = await getPages();
+  return pages.map((page) => ({ params: { slug: page.path || undefined }, props: { page } }));
+}
+const { page } = Astro.props;
+const views: Record<string, any> = {
+  home: Home, approach: Approach, services: Services, 'service-concept': Service, 'service-technical': Service, 'service-turnkey': Service,
+  projects: Projects, project: Project, contact: Contact, thanks: Thanks, privacy: Prose, legal: Prose,
+};
+const View = views[page.key];
+---
+<View page={page} />

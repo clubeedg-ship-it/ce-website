@@ -1,0 +1,17 @@
+---
+import Img from './Img.astro';
+import { projectPath, url, type Lang } from '../lib/routes';
+import { ui, services as svcCopy } from '../i18n/copy';
+import type { Project } from '../lib/projects';
+interface Props { project: Project; lang: Lang; ratio?: 'wide' | 'tall'; sizes?: string; summary?: boolean }
+const { project, lang, sizes = '(min-width: 1500px) 30vw, (min-width: 700px) 46vw, 100vw', summary = false } = Astro.props;
+const d = project.data;
+const t = ui[lang];
+const svc = d.services.map((s) => t[s]).join(' · ');
+---
+<a class="card" href={url(projectPath(lang, d.slugs))} data-sector={d.sector} hreflang={lang}>
+  <div class="card__img"><Img src={d.hero} alt={d.heroAlt[lang]} sizes={sizes} widths={[480, 800, 1200]} pos={d.heroPosition} /></div>
+  <div class="card__meta"><span>{t[d.sector]}</span>{svc && <span>{svc}</span>}</div>
+  <h3 class="card__title">{d.title[lang]}</h3>
+  {summary && <p class="card__sum">{d.summary[lang]}</p>}
+</a>

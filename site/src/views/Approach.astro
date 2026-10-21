@@ -1,0 +1,95 @@
+---
+import Base from '../components/Base.astro';
+import Cta from '../components/Cta.astro';
+import Compare from '../components/Compare.astro';
+import BgVideo from '../components/BgVideo.astro';
+import PauseBtn from '../components/PauseBtn.astro';
+import Img from '../components/Img.astro';
+import type { Page } from '../lib/projects';
+import { staticRoutes, url, type Lang } from '../lib/routes';
+import { ui, approach, home, services as svc } from '../i18n/copy';
+import loftSketch from '../assets/process/loft-sketch.jpg';
+import loftVisual from '../assets/process/loft-visual.jpg';
+import rSketch from '../assets/process/restaurant-sketch.jpg';
+import rVisual from '../assets/process/restaurant-visual-light.jpg';
+import rVisualDark from '../assets/process/restaurant-visual-dark.jpg';
+import modelPoster from '../assets/posters/process-model.jpg';
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang: Lang = page.lang;
+const t = ui[lang];
+const c = approach[lang];
+const h = home[lang];
+const trail = [{ name: t.navHome, path: staticRoutes.home[lang] }, { name: t.navApproach, path: page.path }];
+const order = ['technical-drawings', 'turn-key-build', 'concept-design'] as const;
+const route = { 'technical-drawings': 'service-technical', 'turn-key-build': 'service-turnkey', 'concept-design': 'service-concept' } as const;
+const alt = {
+  loftSketch: lang === 'en' ? 'Hand-drawn pencil sketch on blue paper of a two-storey loft with a mezzanine and a spiral staircase.' : 'Met potlood getekende schets op blauw papier van een loft met twee verdiepingen, een tussenverdieping en een wenteltrap.',
+  loftVisual: lang === 'en' ? '3D cutaway visualisation of the loft with a white kitchen, a black dining set, a spiral staircase and an orange accent.' : '3D-doorsnedevisualisatie van de loft met een witte keuken, een zwarte eetset, een wenteltrap en een oranje accent.',
+  rSketch: lang === 'en' ? 'Hand sketch in perspective of a long restaurant interior with a bar counter, with handwritten notes.' : 'Handschets in perspectief van een lang restaurantinterieur met een barcounter, met handgeschreven aantekeningen.',
+  rVisual: lang === 'en' ? '3D visualisation of the same restaurant interior with a black ceiling, orange pendant lights and a long white banquette.' : '3D-visualisatie van hetzelfde restaurantinterieur met een zwart plafond, oranje hanglampen en een lange witte zitbank.',
+  video: lang === 'en' ? 'Animation in which the pencil sketch of the loft turns into its 3D model.' : 'Animatie waarin de potloodschets van de loft overgaat in het 3D-model.',
+};
+---
+<Base page={page} trail={trail}>
+  <header class="pagehead">
+    <div class="wrap">
+      <nav class="crumbs" aria-label={t.breadcrumb}><ol><li><a href={url(staticRoutes.home[lang])}>{t.navHome}</a></li><li aria-current="page">{t.navApproach}</li></ol></nav>
+      <p class="eyebrow">{c.eyebrow}</p>
+      <h1>{c.h1}</h1>
+      <p class="lead">{c.lead}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap principles">
+      {c.principles.map((p: any) => <article class="reveal"><h2 class="h3">{p.t}</h2><p>{p.d}</p></article>)}
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="proc-title">
+    <div class="wrap stack">
+      <div>
+        <p class="eyebrow">{h.processEyebrow}</p>
+        <h2 id="proc-title" class="h2">{c.processTitle}</h2>
+      </div>
+      <ol class="steps">
+        {h.steps.map((s: any) => <li class="step reveal"><h3>{s.title}</h3><p>{s.text}</p></li>)}
+      </ol>
+      <div class="process-media">
+        <div class="reveal">
+          <Compare before={loftSketch} after={loftVisual} beforeAlt={alt.loftSketch} afterAlt={alt.loftVisual} beforeLabel={t.sketch} afterLabel={t.visualisation} label={t.compareLabel} />
+        </div>
+        <figure class="vid reveal">
+          <div class="vid__frame">
+            <Img src={modelPoster} alt="" sizes="(min-width: 900px) 34vw, 94vw" widths={[480, 800, 1200]} />
+            <BgVideo id="proc-video" lg="process-model" />
+            <PauseBtn lang={lang} target="proc-video" />
+          </div>
+          <figcaption class="caption">{alt.video}</figcaption>
+        </figure>
+      </div>
+      <div class="reveal">
+        <Compare before={rSketch} after={rVisual} wide beforeAlt={alt.rSketch} afterAlt={alt.rVisual} beforeLabel={t.sketch} afterLabel={t.visualisation} label={t.compareLabel} />
+        <p class="caption">{h.compareCaption}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="off-title">
+    <div class="wrap">
+      <div class="sec-head"><div><h2 id="off-title" class="h2">{c.servicesTitle}</h2></div><p class="muted maxw">{c.servicesLead}</p></div>
+      <div class="svc">
+        {order.map((k) => (
+          <a class="svc__row reveal" href={url(staticRoutes[route[k]][lang])}>
+            <span class="svc__n">{svc[lang][k].n === '03' ? '03' : svc[lang][k].n}</span>
+            <h3 class="svc__t">{svc[lang][k].title}</h3>
+            <div class="svc__d"><p>{svc[lang][k].tag}</p><ul>{svc[lang][k].items.map((i: any) => <li>{i.t}</li>)}</ul></div>
+            <span class="svc__a" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <Cta lang={lang} title={c.ctaTitle} text={c.ctaText} />
+</Base>

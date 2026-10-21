@@ -1,0 +1,19 @@
+---
+import { staticRoutes, url, waLink, type Lang } from '../lib/routes';
+import { ui, contactPage } from '../i18n/copy';
+interface Props { lang: Lang; title: string; text: string; plain?: boolean }
+const { lang, title, text, plain = true } = Astro.props;
+const t = ui[lang];
+---
+<section class:list={['cta', plain && 'cta--plain']} aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta__in reveal">
+      <h2 id="cta-title">{title}</h2>
+      <p>{text}</p>
+      <div class="btn-row">
+        <a class="btn" href={url(staticRoutes.contact[lang])}>{t.cta} <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost" href={waLink(contactPage[lang].waText)} rel="noopener">{t.whatsapp}</a>
+      </div>
+    </div>
+  </div>
+</section>

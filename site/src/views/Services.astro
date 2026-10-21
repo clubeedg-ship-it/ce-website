@@ -1,0 +1,40 @@
+---
+import Base from '../components/Base.astro';
+import Cta from '../components/Cta.astro';
+import type { Page } from '../lib/projects';
+import { staticRoutes, url, type Lang } from '../lib/routes';
+import { ui, servicesPage, services as svc } from '../i18n/copy';
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang: Lang = page.lang;
+const t = ui[lang];
+const c = servicesPage[lang];
+const trail = [{ name: t.navHome, path: staticRoutes.home[lang] }, { name: t.navServices, path: page.path }];
+const order = ['concept-design', 'technical-drawings', 'turn-key-build'] as const;
+const route = { 'technical-drawings': 'service-technical', 'turn-key-build': 'service-turnkey', 'concept-design': 'service-concept' } as const;
+---
+<Base page={page} trail={trail}>
+  <header class="pagehead">
+    <div class="wrap">
+      <nav class="crumbs" aria-label={t.breadcrumb}><ol><li><a href={url(staticRoutes.home[lang])}>{t.navHome}</a></li><li aria-current="page">{t.navServices}</li></ol></nav>
+      <p class="eyebrow">{c.eyebrow}</p>
+      <h1>{c.h1}</h1>
+      <p class="lead">{c.lead}</p>
+    </div>
+  </header>
+  <section class="section">
+    <div class="wrap">
+      <div class="svc">
+        {order.map((k) => (
+          <a class="svc__row reveal" href={url(staticRoutes[route[k]][lang])}>
+            <span class="svc__n">{svc[lang][k].n}</span>
+            <h2 class="svc__t">{svc[lang][k].title}</h2>
+            <div class="svc__d"><p>{svc[lang][k].intro}</p><ul>{svc[lang][k].items.map((i: any) => <li>{i.t}</li>)}</ul></div>
+            <span class="svc__a" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <Cta lang={lang} title={c.ctaTitle} text={c.ctaText} />
+</Base>

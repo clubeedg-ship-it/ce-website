@@ -1,0 +1,183 @@
+---
+import Base from '../components/Base.astro';
+import type { Page } from '../lib/projects';
+import { asset, business, PREVIEW, staticRoutes, url, waLink, type Lang } from '../lib/routes';
+import { ui, contactPage as copy } from '../i18n/copy';
+import options from '../../public/api/form-options.json';
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang: Lang = page.lang;
+const t = ui[lang];
+const c = copy[lang];
+const f = c.f;
+const trail = [{ name: t.navHome, path: staticRoutes.home[lang] }, { name: t.navContact, path: page.path }];
+const label = (group: Record<string, string>, k: string) => group[k] ?? k;
+const [pre, post] = f.consent.split('{privacy}');
+const wa = waLink(c.waText);
+const mail = `mailto:${business.email}`;
+---
+<Base page={page} trail={trail}>
+  <header class="pagehead">
+    <div class="wrap">
+      <nav class="crumbs" aria-label={t.breadcrumb}><ol><li><a href={url(staticRoutes.home[lang])}>{t.navHome}</a></li><li aria-current="page">{t.navContact}</li></ol></nav>
+      <p class="eyebrow">{c.eyebrow}</p>
+      <h1>{c.h1}</h1>
+      <p class="lead">{c.lead}</p>
+    </div>
+  </header>
+
+  <section class="section section--tight">
+    <div class="wrap contact">
+      <div class="contact__info reveal">
+        <p>{c.response}</p>
+        <dl class="cinfo">
+          <div><dt>{t.email}</dt><dd><a href={mail}>{business.email}</a></dd></div>
+          <div><dt>{t.phone}</dt><dd><a href={`tel:${business.phoneHref}`}>{business.phone}</a></dd></div>
+          <div><dt>{t.whatsapp}</dt><dd><a href={wa} rel="noopener">{business.phone}</a></dd></div>
+          <div><dt>{c.studio}</dt><dd>{business.street}<br />{business.postal} {business.city}<br />{lang === 'en' ? 'The Netherlands' : 'Nederland'}</dd></div>
+          <div><dt>{c.hours}</dt><dd>{c.hoursValue}</dd></div>
+        </dl>
+        <p class="fallback">{c.directTitle}</p>
+        <div class="btn-row">
+          <a class="btn btn--ghost" href={wa} rel="noopener">{t.whatsapp}</a>
+          <a class="btn btn--ghost" href={`tel:${business.phoneHref}`}>{t.call}</a>
+        </div>
+      </div>
+
+      <div class="contact__form reveal d1">
+        <form class="form" id="enquiry" method="post" action={asset('api/contact.php')} novalidate data-form data-preview={PREVIEW ? '1' : undefined}
+              data-endpoint={asset('api/contact.php')} data-thanks={url(staticRoutes.thanks[lang])} data-step-of={c.stepOf}
+              data-l-next={c.next} data-l-send={c.send} data-l-sending={c.sending}
+              data-e-server={c.errors.server} data-e-network={c.errors.network} data-e-rate={c.errors.rate}
+              data-e-required={c.errors.required} data-e-email={c.errors.email} data-e-consent={c.errors.consent} data-e-number={c.errors.number} data-e-choose={c.errors.choose}>
+          <h2>{c.formTitle}</h2>
+
+          {PREVIEW && (
+            <div class="notice" role="note" data-preview-notice>
+              <strong>{c.previewTitle}</strong>
+              {c.previewText}
+              <div class="btn-row">
+                <a class="btn btn--ghost" href={wa} rel="noopener">{t.whatsapp}</a>
+                <a class="btn btn--ghost" href={mail}>{business.email}</a>
+              </div>
+            </div>
+          )}
+          <div class="notice notice--err" role="alert" tabindex="-1" hidden data-error-notice>
+            <strong data-error-text></strong>
+            <div class="btn-row">
+              <a class="btn btn--ghost" href={wa} rel="noopener">{t.whatsapp}</a>
+              <a class="btn btn--ghost" href={mail}>{business.email}</a>
+            </div>
+          </div>
+          <div class="errsum" role="alert" tabindex="-1" hidden data-errsum>
+            <strong>{c.errors.summary}</strong>
+            <ul data-errlist></ul>
+          </div>
+
+          <div class="progress" aria-hidden="false" data-progress>
+            <p class="sr-only" aria-live="polite" data-step-live></p>
+            <ol>
+              {c.steps.map((s: string, i: number) => <li data-step-i={i} aria-current={i === 0 ? 'step' : undefined}>{i + 1}. {s}</li>)}
+            </ol>
+          </div>
+
+          <input type="hidden" name="lang" value={lang} />
+          <input type="hidden" name="tk" value="" data-tk />
+          <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+
+          <fieldset class="fieldset" data-step="0">
+            <legend>{c.steps[0]}</legend>
+            <div class="field" data-field="sector">
+              <span class="lbl" id="l-sector">{f.sector} <span class="opt">({f.required})</span></span>
+              <div class="choices" role="radiogroup" aria-labelledby="l-sector" aria-describedby="err-sector">
+                {options.sectors.map((k, i) => (
+                  <label class="choice"><input type="radio" name="sector" value={k} required={i === 0 ? true : undefined} /><span>{label(c.sectors, k)}</span></label>
+                ))}
+              </div>
+              <p class="err" id="err-sector"></p>
+            </div>
+            <div class="field" data-field="services">
+              <span class="lbl" id="l-services">{f.services} <span class="opt">({f.optional})</span></span>
+              <span class="help">{f.servicesHint}</span>
+              <div class="choices" role="group" aria-labelledby="l-services">
+                {options.services.map((k) => (
+                  <label class="choice choice--check"><input type="checkbox" name="services[]" value={k} /><span>{label(c.servicesOpt, k)}</span></label>
+                ))}
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset" data-step="1">
+            <legend>{c.steps[1]}</legend>
+            <div class="field" data-field="location">
+              <label for="location">{f.location} <span class="opt">({f.required})</span></label>
+              <span class="help" id="h-location">{f.locationHelp}</span>
+              <input class="input" id="location" name="location" type="text" autocomplete="off" maxlength="120" required aria-describedby="h-location err-location" />
+              <p class="err" id="err-location"></p>
+            </div>
+            <div class="field" data-field="size_m2">
+              <label for="size_m2">{f.size} <span class="opt">({f.optional})</span></label>
+              <span class="help" id="h-size">{f.sizeHelp}</span>
+              <input class="input" id="size_m2" name="size_m2" type="text" inputmode="numeric" autocomplete="off" maxlength="7" aria-describedby="h-size err-size_m2" />
+              <p class="err" id="err-size_m2"></p>
+            </div>
+            <div class="field" data-field="budget">
+              <label for="budget">{f.budget} <span class="opt">({f.optional})</span></label>
+              <span class="help" id="h-budget">{f.budgetHelp}</span>
+              <select class="select" id="budget" name="budget" aria-describedby="h-budget">
+                <option value="">{f.choose}</option>
+                {options.budgets.map((k) => <option value={k}>{label(c.budgets, k)}</option>)}
+              </select>
+            </div>
+            <div class="field" data-field="timeline">
+              <label for="timeline">{f.timeline} <span class="opt">({f.optional})</span></label>
+              <select class="select" id="timeline" name="timeline">
+                <option value="">{f.choose}</option>
+                {options.timelines.map((k) => <option value={k}>{label(c.timelines, k)}</option>)}
+              </select>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset" data-step="2">
+            <legend>{c.steps[2]}</legend>
+            <div class="field" data-field="name">
+              <label for="name">{f.name} <span class="opt">({f.required})</span></label>
+              <input class="input" id="name" name="name" type="text" autocomplete="name" maxlength="120" required aria-describedby="err-name" />
+              <p class="err" id="err-name"></p>
+            </div>
+            <div class="field" data-field="email">
+              <label for="email">{f.email} <span class="opt">({f.required})</span></label>
+              <input class="input" id="email" name="email" type="email" autocomplete="email" maxlength="190" required aria-describedby="err-email" />
+              <p class="err" id="err-email"></p>
+            </div>
+            <div class="field" data-field="phone">
+              <label for="phone">{f.phone}</label>
+              <span class="help" id="h-phone">{f.phoneHelp}</span>
+              <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" aria-describedby="h-phone" />
+            </div>
+            <div class="field" data-field="message">
+              <label for="message">{f.message} <span class="opt">({f.optional})</span></label>
+              <span class="help" id="h-message">{f.messageHelp}</span>
+              <textarea class="textarea" id="message" name="message" rows="5" maxlength="5000" aria-describedby="h-message"></textarea>
+            </div>
+            <div class="field" data-field="consent">
+              <div class="check">
+                <input type="checkbox" id="consent" name="consent" value="1" required aria-describedby="err-consent" />
+                <label for="consent">{pre}<a href={url(staticRoutes.privacy[lang])}>{f.privacy}</a>{post}</label>
+              </div>
+              <p class="err" id="err-consent"></p>
+            </div>
+          </fieldset>
+
+          <p class="muted noscript-note"><noscript>{c.noJs}</noscript></p>
+          <div class="form__nav">
+            <button class="btn btn--ghost btn--back" type="button" hidden data-back>← {c.back}</button>
+            <button class="btn btn--next" type="button" data-next>{c.next} <span class="arr" aria-hidden="true">→</span></button>
+            <button class="btn btn--submit" type="submit" data-submit>{c.send} <span class="arr" aria-hidden="true">→</span></button>
+          </div>
+          <p class="fallback">{c.fallbackText}</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>

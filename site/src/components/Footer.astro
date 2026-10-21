@@ -1,0 +1,48 @@
+---
+import { business, staticRoutes, url, waLink, type Lang } from '../lib/routes';
+import { ui, contactPage } from '../i18n/copy';
+interface Props { lang: Lang; logo: string }
+const { lang, logo } = Astro.props;
+const t = ui[lang];
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__logo" href={url(staticRoutes.home[lang])} aria-label="CuttingEdge"><img src={logo} alt="" width="98" height="46" loading="lazy" /></a>
+        <p>{t.footTag}</p>
+      </div>
+      <nav aria-label={t.footNav}>
+        <h2>{t.footNav}</h2>
+        <ul>
+          <li><a href={url(staticRoutes.projects[lang])}>{t.navProjects}</a></li>
+          <li><a href={url(staticRoutes.services[lang])}>{t.navServices}</a></li>
+          <li><a href={url(staticRoutes.approach[lang])}>{t.navApproach}</a></li>
+          <li><a href={url(staticRoutes.contact[lang])}>{t.navContact}</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>{t.footContact}</h2>
+        <address>
+          {business.street}<br />{business.postal} {business.city}<br />
+          <a href={`mailto:${business.email}`}>{business.email}</a><br />
+          <a href={`tel:${business.phoneHref}`}>{business.phone}</a><br />
+          <a href={waLink(contactPage[lang].waText)} rel="noopener">{t.whatsapp}</a>
+        </address>
+      </div>
+      <nav aria-label={t.footLegal}>
+        <h2>{t.footLegal}</h2>
+        <ul>
+          <li><a href={url(staticRoutes.privacy[lang])}>{t.privacy}</a></li>
+          <li><a href={url(staticRoutes.legal[lang])}>{t.legal}</a></li>
+          <li><a href={url(staticRoutes.home[lang === 'en' ? 'nl' : 'en'])} hreflang={lang === 'en' ? 'nl' : 'en'} lang={lang === 'en' ? 'nl' : 'en'}>{t.langSwitch}</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bar">
+      <span>© {year} CuttingEdge. {t.rights}</span>
+      <span>{t.kvk} {business.kvk}</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,68 @@
+---
+import '../styles/global.css';
+import logoUrl from '../assets/brand/logo-light.svg?url';
+import interUrl from '../assets/fonts/inter-latin-wght-normal.woff2?url';
+import playfairUrl from '../assets/fonts/playfair-display-latin-wght-normal.woff2?url';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import MobileBar from './MobileBar.astro';
+import { abs, asset, PREVIEW, SITE, url, languages, type Lang } from '../lib/routes';
+import { ui } from '../i18n/copy';
+import { graph } from '../lib/schema';
+import { pageMeta, type Page } from '../lib/projects';
+
+interface Props { page: Page; trail?: { name: string; path: string }[]; noindex?: boolean; extraJsonLd?: object[]; metaOverride?: { title: string; desc: string }; ogKey?: string }
+const { page, trail = [], noindex = false, extraJsonLd = [], metaOverride, ogKey } = Astro.props;
+const lang: Lang = page.lang;
+const { title, desc } = metaOverride ?? pageMeta(page);
+const t = ui[lang];
+const canonical = abs(page.path);
+const ogName = ogKey ?? (page.key === 'project' ? `project-${page.project!.id}` : page.key);
+const ogImage = `${SITE}${asset(`og/${lang}/${ogName}.jpg`)}`;
+const robots = PREVIEW || noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
+const ld = graph(page, title, desc, ogImage, trail);
+if (extraJsonLd.length) (ld['@graph'] as any[]).push(...extraJsonLd);
+const logoFull = logoUrl;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={desc} />
+    <meta name="robots" content={robots} />
+    <meta name="theme-color" content="#121212" />
+    <link rel="canonical" href={canonical} />
+    {languages.map((l) => <link rel="alternate" hreflang={l} href={abs(page.paths[l])} />)}
+    <link rel="alternate" hreflang="x-default" href={abs(page.paths.en)} />
+    <meta property="og:site_name" content="CuttingEdge" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'nl_NL'} />
+    <meta property="og:locale:alternate" content={lang === 'en' ? 'nl_NL' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href={asset('favicon-32.png')} type="image/png" sizes="32x32" />
+    <link rel="icon" href={asset('favicon-192.png')} type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href={asset('apple-touch-icon.png')} />
+    <link rel="preload" href={interUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={playfairUrl} as="font" type="font/woff2" crossorigin />
+    <slot name="head" />
+    <script is:inline src={asset('boot.js')}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+  </head>
+  <body>
+    <a class="skip" href="#main">{t.skip}</a>
+    <Header page={page} logo={logoFull} />
+    <main id="main"><slot /></main>
+    <Footer lang={lang} logo={logoFull} />
+    <MobileBar lang={lang} />
+    <script src="../scripts/site.js"></script>
+  </body>
+</html>

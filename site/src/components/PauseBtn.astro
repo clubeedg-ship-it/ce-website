@@ -1,0 +1,12 @@
+---
+import { ui } from '../i18n/copy';
+import type { Lang } from '../lib/routes';
+interface Props { lang: Lang; target: string }
+const { lang, target } = Astro.props;
+const t = ui[lang];
+---
+<button class="pause" type="button" hidden aria-pressed="false" data-pause={target} data-l-pause={t.pause} data-l-play={t.play}>
+  <svg class="i-pause" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0h3v10H1zM6 0h3v10H6z"/></svg>
+  <svg class="i-play" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0l8 5-8 5z"/></svg>
+  <span data-pause-label>{t.pause}</span>
+</button>
