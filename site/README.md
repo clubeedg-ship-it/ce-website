@@ -88,3 +88,12 @@ SIDES=after node tests/shots.mjs ../.shots https://cuttingedge.world http://127.
 (`../scripts/serve-dist.py site/dist 8090 --htaccess site/public/.htaccess --gzip --php http://127.0.0.1:9000` + `php -S 127.0.0.1:9000 -t dist` is the local stack used for these.)
 `tests/psi.sh` runs PageSpeed Insights against a public URL; keyless access has no daily quota (HTTP 429), so add an API key to use it.
 Deploying: see `DEPLOY.md`. Open questions for the studio: `CONTENT-NEEDED.md`. Design system: `DESIGN.md`.
+
+## Public preview at edge.oopuo.nl
+
+Served from the hermeslocal server through a Cloudflare tunnel (not GitHub Pages, not Hostinger). Always noindex; the form only shows the preview notice (no PHP behind it).
+
+- build (in `site/`): `PREVIEW=1 PREVIEW_SITE=https://edge.oopuo.nl PREVIEW_BASE=/ FONTCONFIG_FILE=$PWD/scripts/fonts/fonts.conf npx astro build --outDir dist-edge`
+- publish (live at once): `rsync -a --delete --exclude api/ --exclude .htaccess dist-edge/ ~/srv/edge.oopuo.nl/`
+- web: user unit `ce-edge-web.service` = `scripts/serve-dist.py ~/srv/edge.oopuo.nl 8792 --gzip --public` (production security headers read from `public/.htaccess`, plus `X-Robots-Tag: noindex`)
+- tunnel: user unit `cf-oopuo-web.service` (tunnel `oopuo-web`, config `~/.cloudflared/oopuo-web.yml`, ingress `edge.oopuo.nl` -> `127.0.0.1:8792`); setup script `~/srv/oopuo-web/setup.sh`
