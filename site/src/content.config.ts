@@ -27,7 +27,7 @@ const projects = defineCollection({
       heroCredit: z.string().optional(),
       gallery: z.array(z.object({ src: image(), alt: t, credit: z.string().optional() })).default([]),
       video: z
-        .object({ src: z.string(), poster: image(), alt: t })
+        .object({ src: z.string(), sm: z.string().optional(), poster: image(), alt: t })
         .nullable()
         .default(null),
     }),

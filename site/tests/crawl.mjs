@@ -98,6 +98,7 @@ while (queue.length) {
   pages.push(rec);
   await page.close();
 }
+const cookies = await ctx.cookies(); console.log('cookies set during the whole crawl:', cookies.length);
 await browser.close();
 
 const bad = pages.filter((p) => p.issues.length);
@@ -106,4 +107,4 @@ for (const p of bad) console.log(`- ${p.url}\n    ${p.issues.join('\n    ')}`);
 const langs = { en: pages.filter((p) => p.lang === 'en').length, nl: pages.filter((p) => p.lang === 'nl').length };
 console.log('pages by html lang:', JSON.stringify(langs));
 if (out) fs.writeFileSync(out, JSON.stringify(pages, null, 1));
-process.exit(bad.length ? 1 : 0);
+process.exit(bad.length || cookies.length ? 1 : 0);

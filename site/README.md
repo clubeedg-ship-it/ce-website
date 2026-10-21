@@ -74,9 +74,17 @@ To try the form end to end locally, also run `php -S 127.0.0.1:9000 -t dist` and
 ## Change redirects
 Edit `redirects.tsv`, run `node scripts/gen-redirects.mjs` (rewrites the generated block in `public/.htaccess`), commit. Check against a live host with `../scripts/check-redirects.sh https://cuttingedge.world`.
 
-## Checks
+## Checks (all of these were run before the PR; outputs are in `tests/evidence/`)
 ```bash
 export LD_LIBRARY_PATH=~/.local/share/chromium-deps/root/usr/lib/x86_64-linux-gnu    # only needed on the build host
-node tests/crawl.mjs http://127.0.0.1:8080/ --out crawl.json     # every page EN+NL: console, links, assets, alt, meta
+node tests/crawl.mjs http://127.0.0.1:8090/ --out crawl.json     # every page EN+NL: console, links, assets, alt, meta, cookies, third parties
+node tests/e2e.mjs http://127.0.0.1:8090/ dist/api/_data/leads.jsonl   # form (steps, errors, no-JS, failure path), slider, lightbox, filter, menu, video, reduced motion
+PHP_BIN=/path/to/php bash tests/php-endpoint.test.sh             # 30 endpoint checks on php -S
+VNU_JAVA=… VNU_JAR=… bash tests/validate-html.sh dist           # W3C Nu HTML checker, all pages
+bash tests/lighthouse.sh out http://127.0.0.1:8090 1             # Lighthouse mobile, 4x and 1x CPU (needs Chrome on :9333, see the script header)
+bash ../scripts/check-redirects.sh http://127.0.0.1:8090         # legacy → new 301s
+SIDES=after node tests/shots.mjs ../.shots https://cuttingedge.world http://127.0.0.1:8090 && python3 tests/compare-shots.py ../.shots docs/screenshots
 ```
+(`../scripts/serve-dist.py site/dist 8090 --htaccess site/public/.htaccess --gzip --php http://127.0.0.1:9000` + `php -S 127.0.0.1:9000 -t dist` is the local stack used for these.)
+`tests/psi.sh` runs PageSpeed Insights against a public URL; keyless access has no daily quota (HTTP 429), so add an API key to use it.
 Deploying: see `DEPLOY.md`. Open questions for the studio: `CONTENT-NEEDED.md`. Design system: `DESIGN.md`.

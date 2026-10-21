@@ -79,7 +79,7 @@ const hasStory = story.some(([, v]) => v);
         <figure class="vid reveal">
           <div class="vid__frame">
             <Img src={d.video.poster} alt="" sizes="(min-width: 1440px) 1344px, 94vw" widths={[800, 1200, 1800]} />
-            <BgVideo id="p-video" lg={d.video.src} />
+            <BgVideo id="p-video" lg={d.video.src} sm={d.video.sm} />
             <PauseBtn lang={lang} target="p-video" />
           </div>
           <figcaption class="caption">{d.video.alt[lang]}</figcaption>

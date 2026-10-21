@@ -90,7 +90,7 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--go
   .menu-btn{display:block;margin-left:auto}
   .header__tools .btn{display:none}
   .nav{position:fixed;inset:var(--header-h) 0 0 0;background:var(--ink-1);padding:2rem var(--gutter) 6rem;overflow:auto;visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .25s,transform .25s,visibility .25s;margin:0}
-  .nav.is-open{visibility:visible;opacity:1;transform:none}
+  .nav.is-open{visibility:visible;opacity:1;transform:none;transition:opacity .25s,transform .25s,visibility 0s}
   .nav ul{flex-direction:column;align-items:flex-start;gap:0}
   .nav li{width:100%;border-bottom:1px solid var(--line)}
   .nav a{display:block;font:500 var(--s2)/1.2 var(--serif);letter-spacing:0;text-transform:none;padding:1.1rem 0}
@@ -231,7 +231,7 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--go
 @media (min-width:1500px){.pgrid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:700px){.pgrid{grid-template-columns:1fr}}
 .pgrid .card[hidden]{display:none}
-.js .pgrid .card{animation:fadeup .6s var(--ease) both}
+@media (scripting:enabled){.pgrid .card{animation:fadeup .6s var(--ease) both}}
 @keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* ---------- project page ---------- */
@@ -323,13 +323,12 @@ dialog.lightbox::backdrop{background:#000}
 .notice[hidden]{display:none}
 .notice--err{border-color:var(--danger);background:rgba(255,155,142,.08)}.notice--err strong{color:var(--danger)}
 .progress{display:none;margin-bottom:2rem}
-.js .progress{display:block}
+@media (scripting:enabled){.progress{display:block}}
 .progress ol{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
 .progress li{border-top:2px solid var(--line-strong);padding-top:.7rem;font:600 .7rem/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .progress li[aria-current="step"]{border-color:var(--gold);color:var(--gold)}
 .progress li.is-done{border-color:var(--gold-2);color:var(--paper)}
 .fieldset{border:0;padding:0;margin:0 0 2rem;min-width:0}
-.js .fieldset[hidden]{display:none}
 .fieldset legend{font:500 var(--s1)/1.2 var(--serif);color:var(--paper);padding:0;margin-bottom:1.2rem;float:left;width:100%}
 .fieldset legend+*{clear:both}
 .field{margin-bottom:1.4rem}
@@ -364,10 +363,9 @@ dialog.lightbox::backdrop{background:#000}
 .errsum ul{margin-top:.5rem;padding-left:1.1rem;list-style:disc}
 .errsum a{color:var(--danger)}
 .form__nav{display:flex;justify-content:space-between;gap:1rem;margin-top:1rem;flex-wrap:wrap}
-.js .form__nav .btn--back[hidden]{display:none}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
-.js .btn--next{display:inline-flex}.btn--next{display:none}
-.js .btn--submit[hidden]{display:none}
+.btn--next{display:none}
+@media (scripting:enabled){.btn--next{display:inline-flex}}
 .fallback{margin-top:1.5rem;color:var(--muted);font-size:.95rem}
 
 /* ---------- prose (legal) ---------- */
@@ -409,9 +407,13 @@ dialog.lightbox::backdrop{background:#000}
 .nf__n{font:400 clamp(6rem,24vw,18rem)/.9 var(--serif);color:transparent;-webkit-text-stroke:1px var(--gold-2);margin-bottom:1rem}
 
 /* ---------- motion ---------- */
-.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.js .reveal.in{opacity:1;transform:none}
-.js .reveal.d1{transition-delay:.1s}.js .reveal.d2{transition-delay:.2s}.js .reveal.d3{transition-delay:.3s}
+/* scripting:enabled replaces a blocking <head> script; the 3 s keyframe is a safety net so content can never stay hidden */
+@media (scripting:enabled){
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);animation:revealfb .01s linear 3s forwards}
+  .reveal.in{opacity:1;transform:none;animation:none}
+  .reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+}
+@keyframes revealfb{to{opacity:1;transform:none}}
 .hero__copy>*{animation:rise .9s var(--ease) both}
 .hero__copy>*:nth-child(2){animation-delay:.12s}.hero__copy>*:nth-child(3){animation-delay:.24s}.hero__copy>*:nth-child(4){animation-delay:.36s}
 @keyframes rise{from{transform:translateY(22px)}to{transform:none}}
@@ -420,7 +422,7 @@ dialog.lightbox::backdrop{background:#000}
 ::view-transition-group(site-header){animation:none}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .js .reveal{opacity:1;transform:none}
+  .reveal{opacity:1!important;transform:none!important;animation:none!important}
   @view-transition{navigation:none}
 }
 .pos-upper{object-position:50% 30%}.pos-lower{object-position:50% 65%}.pos-center{object-position:50% 50%}
@@ -437,3 +439,6 @@ picture{display:block}
 h1,h2,h3,h4{word-spacing:.06em}
 figure{margin:0}
 .principles h2{margin-bottom:.8rem}
+@media (max-width:760px){.hero__inner{padding-bottom:5.5rem}}
+.filters[hidden]{display:flex!important;visibility:hidden}
+@media (scripting:none){.filters{display:none!important}}

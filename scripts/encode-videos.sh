@@ -22,5 +22,6 @@ enc $SRC/cuttingedge-hero.webm hero-720  "$CROP,scale=960:-2,fps=24"  330 380
 enc $SRC/video-001.webm project-jewellery "$CROP,scale=1280:-2,fps=24" 1050 1050
 enc $SRC/video-003.webm project-restaurant "$CROP,scale=1280:-2,fps=24" 1500 1500
 enc $SRC/video-002.webm project-salon "scale=1280:-2,fps=24" 850 850
+enc $SRC/video-002.webm project-salon-sm "scale=960:-2,fps=24" 480 480
 enc $SRC/video-004.webm process-model "scale=960:-2,fps=24" 1500 1500
 echo ALLDONE

@@ -17,6 +17,7 @@ heroPosition: center
 gallery: []
 video:
   src: project-salon
+  sm: project-salon-sm
   poster: ../../assets/posters/salon.jpg
   alt:
     en: Visualisation film of the beauty salon, moving past a spiral staircase and a curved white sofa.

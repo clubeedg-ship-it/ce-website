@@ -11,7 +11,7 @@ Time needed: about 20 minutes. Keep the old site's backup until the checks below
   cd site && npm ci && npm run build        # → site/dist/  (base "/", indexable)
   ```
 * [ ] Edit `site/public/api/config.php` **before** building (it is copied into `dist/api/`), or edit it on the server after upload. Set `recipients`, `from`.
-* [ ] Zip including hidden files (`.htaccess` matters):
+* [ ] Zip including hidden files (`.htaccess` matters). Always zip a **fresh** build: if you ever ran the PHP endpoint locally from `dist/`, delete `dist/api/_data/` first (it would contain test leads and the secret key).
   ```bash
   cd site/dist && zip -r ../../ce-v3.zip . && cd ../..
   ```

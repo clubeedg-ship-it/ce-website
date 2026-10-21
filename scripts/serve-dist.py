@@ -13,7 +13,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
 ap = argparse.ArgumentParser()
 ap.add_argument('dist'); ap.add_argument('port', type=int)
-ap.add_argument('--prefix', default=''); ap.add_argument('--htaccess'); ap.add_argument('--php')
+ap.add_argument('--prefix', default=''); ap.add_argument('--htaccess'); ap.add_argument('--php'); ap.add_argument('--gzip', action='store_true')
 a = ap.parse_args()
 mimetypes.add_type('image/avif', '.avif'); mimetypes.add_type('video/webm', '.webm'); mimetypes.add_type('font/woff2', '.woff2')
 
@@ -59,7 +59,12 @@ class H(SimpleHTTPRequestHandler):
         if rng and (m := re.match(r'bytes=(\d*)-(\d*)', rng)):
             s = int(m.group(1) or 0); e = int(m.group(2)) if m.group(2) else len(data) - 1
             return self._send(206, data[s:e + 1], ctype, {'Content-Range': f'bytes {s}-{e}/{len(data)}', 'Accept-Ranges': 'bytes'})
-        self._send(200, data, ctype, {'Accept-Ranges': 'bytes', 'Cache-Control': 'no-cache'})
+        extra = {'Accept-Ranges': 'bytes', 'Cache-Control': 'public, max-age=31536000, immutable' if '/_astro/' in path else ('public, max-age=2592000' if '/media/' in path else ('public, max-age=604800' if re.search(r'\.(png|svg|js|css)$', path) else 'no-cache'))}
+        # emulate the production .htaccess: gzip text, long cache for hashed assets (lets Lighthouse see realistic transfer)
+        if a.gzip and 'gzip' in (self.headers.get('Accept-Encoding') or '') and re.match(r'(text/|application/(json|xml|javascript|ld\+json)|image/svg)', ctype):
+            import gzip
+            data = gzip.compress(data, 6); extra['Content-Encoding'] = 'gzip'; extra['Vary'] = 'Accept-Encoding'
+        self._send(200, data, ctype, extra)
     def notfound(self):
         f = os.path.join(a.dist, '404.html')
         self._send(404, open(f, 'rb').read() if os.path.isfile(f) else b'Not found')
@@ -67,6 +72,7 @@ class H(SimpleHTTPRequestHandler):
         n = int(self.headers.get('Content-Length') or 0)
         body = self.rfile.read(n) if n else None
         req = urllib.request.Request(a.php + self.path[len(a.prefix):], data=body, method=self.command)
+        req.add_header('Host', self.headers.get('Host', ''))
         for k in ('Content-Type', 'Accept', 'Origin', 'Referer'):
             if self.headers.get(k): req.add_header(k, self.headers[k])
         class NoRedirect(urllib.request.HTTPRedirectHandler):

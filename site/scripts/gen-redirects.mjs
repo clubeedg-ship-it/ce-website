@@ -7,6 +7,8 @@ const esc = (s) => s.replace(/[.+*?^${}()|[\]\\]/g, '\\$&');
 const out = [];
 for (const [from, to, kind] of rows) {
   const target = to === '/' ? '/' : '/' + to;
+  // index.html: mod_dir's internal DirectoryIndex redirect would re-trigger the rule and loop, so match the client's request line only
+  if (from === 'index.html') out.push('  RewriteCond %{THE_REQUEST} \\s/index\\.html[\\s?]');
   if (kind === 'exact') out.push(`  RewriteRule ^${esc(from)}$ ${target} [R=301,L]`);
   else if (kind === 'prefix') out.push(`  RewriteRule ^${esc(from)} ${target} [R=301,L]`);
   else throw new Error('bad kind: ' + kind);

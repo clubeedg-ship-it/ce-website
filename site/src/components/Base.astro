@@ -54,7 +54,6 @@ const logoFull = logoUrl;
     <link rel="preload" href={interUrl} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={playfairUrl} as="font" type="font/woff2" crossorigin />
     <slot name="head" />
-    <script is:inline src={asset('boot.js')}></script>
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </head>
   <body>
