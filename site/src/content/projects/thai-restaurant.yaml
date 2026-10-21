@@ -1,0 +1,26 @@
+id: 10
+order: 3
+featured: true
+sector: hospitality
+services: []
+slugs: { en: thai-restaurant, nl: thais-restaurant }
+title: { en: Thai Restaurant, nl: Thais restaurant }
+summary:
+  en: A restaurant interior with a timber slatted ceiling, planted partitions and a glowing green entrance sign.
+  nl: Een restaurantinterieur met een houten lamellenplafond, beplante scheidingswanden en een oplichtend groen entreebord.
+facts: []
+hero: ../../assets/projects/thai-restaurant/dining-hall.jpg
+heroAlt:
+  en: Narrow restaurant dining hall with a timber slatted ceiling, wall lights, planters on a partition and tables along the windows.
+  nl: Smalle restaurantzaal met een houten lamellenplafond, wandlampen, planten op een scheidingswand en tafels langs de ramen.
+heroPosition: upper
+gallery:
+  - src: ../../assets/projects/thai-restaurant/entrance.jpg
+    alt:
+      en: Restaurant entrance with a green illuminated “Pad Thai” sign, a timber slatted ceiling and a polished black marble floor.
+      nl: Restaurantingang met een groen verlicht “Pad Thai”-bord, een houten lamellenplafond en een gepolijste zwarte marmeren vloer.
+  - src: ../../assets/projects/thai-restaurant/dining-hall-counter.jpg
+    alt:
+      en: The dining hall from a second angle, with a service counter, the timber ceiling and tables stretching towards the entrance.
+      nl: De restaurantzaal vanuit een tweede hoek, met een servicecounter, het houten plafond en tafels richting de ingang.
+video: null

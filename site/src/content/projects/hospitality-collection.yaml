@@ -1,0 +1,51 @@
+id: 4
+order: 1
+featured: true
+sector: hospitality
+services: [turn-key-build]
+slugs: { en: hospitality-collection, nl: horecacollectie }
+title: { en: Hospitality Collection, nl: Horecacollectie }
+summary:
+  en: A bar and lounge in Amsterdam, built turn-key around dramatic lighting, bespoke bar furniture and a gold mesh back wall.
+  nl: Een bar en lounge in Amsterdam, turn-key gebouwd rond dramatische verlichting, maatwerk barmeubilair en een gouden gaaswand.
+brief:
+  en: Create a distinctive bar and lounge that stands out in Amsterdam’s competitive hospitality scene.
+  nl: Een onderscheidende bar en lounge creëren die opvalt in de concurrerende Amsterdamse horecascene.
+challenge:
+  en: The space needed to feel both exclusive and welcoming.
+  nl: De ruimte moest tegelijk exclusief en uitnodigend aanvoelen.
+outcome:
+  en: A signature atmosphere achieved through dramatic lighting, bespoke bar furniture and carefully curated materials. The venue became a destination, not just a place to drink.
+  nl: Een kenmerkende sfeer, bereikt met dramatische verlichting, maatwerk barmeubilair en zorgvuldig gekozen materialen. De zaak werd een bestemming, niet alleen een plek om te drinken.
+facts:
+  - { key: location, label: { en: Location, nl: Locatie }, value: { en: 'Amsterdam, NL', nl: 'Amsterdam, NL' } }
+  - { key: year, label: { en: Year, nl: Jaar }, value: { en: '2020', nl: '2020' } }
+  - { key: scope, label: { en: Scope, nl: Omvang }, value: { en: Complete build, nl: Complete bouw } }
+  - { key: time, label: { en: Build time, nl: Bouwtijd }, value: { en: 3 months, nl: 3 maanden } }
+hero: ../../assets/projects/hospitality-collection/bar-back-wall.jpg
+heroAlt:
+  en: Bar counter lit in warm amber in front of a floor-to-ceiling wall of gold metal mesh, with staff working behind the bar.
+  nl: Barcounter in warm amberlicht voor een wand van gouden metaalgaas van vloer tot plafond, met personeel achter de bar.
+heroPosition: lower
+gallery:
+  - src: ../../assets/projects/hospitality-collection/bar-lounge-wide.jpg
+    alt:
+      en: Wide view of the bar and lounge with a long illuminated bar counter, pendant lights and a white lounge area by the windows.
+      nl: Overzicht van de bar en lounge met een lange verlichte barcounter, hanglampen en een witte loungehoek bij de ramen.
+  - src: ../../assets/projects/hospitality-collection/mesh-curtain.jpg
+    alt:
+      en: Detail of a gold chain-mesh curtain hanging from the ceiling, glowing in the bar lighting.
+      nl: Detail van een gouden kettingcurtain die van het plafond hangt en gloeit in het barlicht.
+  - src: ../../assets/projects/hospitality-collection/logo-rings.jpg
+    alt:
+      en: Two illuminated circular emblems with a stag motif above the back bar, with a bartender below.
+      nl: Twee verlichte ronde emblemen met een hertenmotief boven de achterbar, met een barman eronder.
+  - src: ../../assets/projects/hospitality-collection/bar-evening.jpg
+    alt:
+      en: The back bar in the evening with glowing circular emblems, bottles on lit shelves and a bartender at work.
+      nl: De achterbar in de avond met gloeiende ronde emblemen, flessen op verlichte planken en een barman aan het werk.
+  - src: ../../assets/projects/hospitality-collection/brick-pillar.jpg
+    alt:
+      en: A brick pillar and dark wood panelling beside the bar, with a guest seated at the counter.
+      nl: Een bakstenen pilaar en donker houten wandbekleding naast de bar, met een gast aan de counter.
+video: null

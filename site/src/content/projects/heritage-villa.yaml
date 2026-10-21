@@ -1,0 +1,31 @@
+id: 3
+order: 7
+featured: false
+sector: residential
+services: [technical-drawings]
+slugs: { en: heritage-villa, nl: historische-villa }
+title: { en: Heritage Villa, nl: Historische villa }
+summary:
+  en: "Restoration of a 1920s villa that integrates modern amenities invisibly and respects its original architectural language."
+  nl: "Restauratie van een villa uit de jaren twintig waarin moderne voorzieningen onzichtbaar zijn geïntegreerd en de oorspronkelijke bouwstijl wordt gerespecteerd."
+brief:
+  en: "Restore a 1920s villa to its former glory while integrating modern amenities invisibly."
+  nl: "Een villa uit de jaren twintig in oude glorie herstellen en moderne voorzieningen onzichtbaar integreren."
+challenge:
+  en: "Every intervention needed to respect the original architectural language."
+  nl: "Elke ingreep moest de oorspronkelijke architectonische taal respecteren."
+outcome:
+  en: "Meticulous restoration revealed hidden details while smart technology was embedded seamlessly. The result honours history while providing contemporary comfort."
+  nl: "Zorgvuldig restauratiewerk bracht verborgen details aan het licht terwijl slimme technologie naadloos werd ingebouwd. Het resultaat eert de geschiedenis en biedt eigentijds comfort."
+facts:
+  - { key: location, label: { en: Location, nl: Locatie }, value: { en: "Rotterdam, NL", nl: "Rotterdam, NL" } }
+  - { key: year, label: { en: Year, nl: Jaar }, value: { en: "2015", nl: "2015" } }
+  - { key: scope, label: { en: Scope, nl: Omvang }, value: { en: "Restoration", nl: "Restauratie" } }
+  - { key: built, label: { en: Original build year, nl: Oorspronkelijk bouwjaar }, value: { en: "1920", nl: "1920" } }
+hero: ../../assets/projects/heritage-villa/living-room.jpg
+heroAlt:
+  en: "Visualisation of a living room with a taupe corner sofa, a dark feature wall, a designer lounge chair, an arc floor lamp and a blossom branch in a vase."
+  nl: "Visualisatie van een woonkamer met een taupe hoekbank, een donkere accentwand, een design loungestoel, een booglamp en een bloesemtak in een vaas."
+heroPosition: center
+gallery: []
+video: null

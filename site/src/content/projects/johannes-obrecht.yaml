@@ -1,0 +1,51 @@
+id: 8
+order: 9
+featured: false
+sector: residential
+services: []
+slugs: { en: johannes-obrecht, nl: johannes-obrecht }
+title: { en: Johannes Obrecht, nl: Johannes Obrecht }
+summary:
+  en: "A classic Amsterdam residence renovated into a modern family home, with open living spaces and original details preserved."
+  nl: "Een klassieke Amsterdamse woning gerenoveerd tot een modern gezinshuis, met open leefruimtes en behouden originele details."
+brief:
+  en: "Transform a classic Amsterdam residence into a modern family home without erasing its character."
+  nl: "Een klassieke Amsterdamse woning transformeren tot een modern gezinshuis zonder het karakter uit te wissen."
+challenge:
+  en: "The renovation needed to accommodate growing children and entertaining."
+  nl: "De renovatie moest ruimte bieden aan opgroeiende kinderen en aan gasten ontvangen."
+outcome:
+  en: "Open living spaces flow naturally while private areas provide retreat. Original details were preserved and highlighted, creating a dialogue between old and new."
+  nl: "Open leefruimtes lopen natuurlijk in elkaar over terwijl privéruimtes rust bieden. Originele details bleven behouden en komen extra uit, wat een dialoog tussen oud en nieuw schept."
+facts:
+  - { key: location, label: { en: Location, nl: Locatie }, value: { en: "Amsterdam, NL", nl: "Amsterdam, NL" } }
+  - { key: year, label: { en: Year, nl: Jaar }, value: { en: "2012", nl: "2012" } }
+  - { key: scope, label: { en: Scope, nl: Omvang }, value: { en: "Complete renovation", nl: "Complete renovatie" } }
+  - { key: size, label: { en: Total area, nl: Totaal oppervlak }, value: { en: "320 m²", nl: "320 m²" } }
+hero: ../../assets/projects/johannes-obrecht/kitchen.jpg
+heroAlt:
+  en: "White kitchen island with a hob under a dome-shaped extractor, with tall walnut-toned cabinets behind."
+  nl: "Wit keukeneiland met een kookplaat onder een koepelvormige afzuigkap, met hoge notenkleurige kasten erachter."
+heroPosition: center
+gallery:
+  - src: ../../assets/projects/johannes-obrecht/kitchen-island.jpg
+    alt:
+      en: "Open-plan space with a white kitchen island, a dining table, a walnut storage wall and a crystal chandelier at the right."
+      nl: "Open ruimte met een wit keukeneiland, een eettafel, een notenhouten kastenwand en rechts een kristallen kroonluchter."
+  - src: ../../assets/projects/johannes-obrecht/hallway.jpg
+    alt:
+      en: "Long white room with a pale floor, a large portrait painting on the right wall and a dining area at the far end."
+      nl: "Lange witte ruimte met een lichte vloer, een groot portretschilderij aan de rechterwand en een eetruimte aan het einde."
+  - src: ../../assets/projects/johannes-obrecht/bedroom.jpg
+    alt:
+      en: "Bedroom with dark linen and a ring-shaped ceiling light, a blue glow under the desk and dark panelling."
+      nl: "Slaapkamer met donker beddengoed en een ringvormige plafondlamp, een blauwe gloed onder het bureau en donkere wandbekleding."
+  - src: ../../assets/projects/johannes-obrecht/bedroom-evening.jpg
+    alt:
+      en: "Bedroom with warm wall lighting, a bed with teal cushions and a bedside lamp."
+      nl: "Slaapkamer met warme wandverlichting, een bed met petrolkleurige kussens en een nachtlampje."
+  - src: ../../assets/projects/johannes-obrecht/stairwell.jpg
+    alt:
+      en: "View down a stairwell with a cascade of globe pendant lights above a dark wooden banister."
+      nl: "Blik door een trappenhuis met een cascade van bolvormige hanglampen boven een donkere houten trapleuning."
+video: null
