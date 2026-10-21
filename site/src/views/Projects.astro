@@ -32,7 +32,7 @@ const trail = [{ name: t.navHome, path: staticRoutes.home[lang] }, { name: t.nav
         <p class="filters__count" aria-live="polite" data-count data-template={`${t.showing} {n} ${t.projectsWord}`}></p>
       </div>
       <div class="pgrid">
-        {all.map((p) => <ProjectCard project={p} lang={lang} summary />)}
+        {all.map((p) => <ProjectCard project={p} lang={lang} summary level={2} />)}
       </div>
     </div>
   </section>

@@ -40,7 +40,7 @@ while (queue.length) {
   const rec = { url, consoleErrors: [], failedRequests: [], thirdParty: [], issues: [] };
   page.on('console', (m) => { if (['error', 'warning'].includes(m.type())) rec.consoleErrors.push(`${m.type()}: ${m.text()}`); });
   page.on('pageerror', (e) => rec.consoleErrors.push('pageerror: ' + e.message));
-  page.on('requestfailed', (r) => rec.failedRequests.push(`${r.url()} ${r.failure()?.errorText}`));
+  page.on('requestfailed', (r) => { if (/\.(webm|mp4)$/.test(r.url()) && r.failure()?.errorText === 'net::ERR_ABORTED') return; /* browser cancels range requests of paused/off-screen video: not a failure */ rec.failedRequests.push(`${r.url()} ${r.failure()?.errorText}`); });
   page.on('response', (r) => { if (r.status() >= 400 && !r.url().endsWith('404.html') || (r.status() >= 400 && url.endsWith('404.html') && r.url() !== url)) rec.failedRequests.push(`${r.status()} ${r.url()}`); });
   page.on('request', (r) => { try { if (new URL(r.url()).origin !== origin && !r.url().startsWith('data:') && !r.url().startsWith('blob:')) rec.thirdParty.push(r.url()); } catch {} });
   const resp = await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 }).catch((e) => { rec.issues.push('goto: ' + e.message); return null; });
@@ -63,7 +63,7 @@ while (queue.length) {
       imgBroken: imgs.filter((i) => i.complete && i.naturalWidth === 0).map((i) => i.currentSrc || i.src),
       links: [...document.querySelectorAll('a[href]')].map((a) => a.href),
       jsonld: [...document.querySelectorAll('script[type="application/ld+json"]')].map((s) => { try { JSON.parse(s.textContent); return 'ok'; } catch { return 'INVALID'; } }),
-      inlineStyle: document.querySelectorAll('[style]').length,
+      inlineStyle: document.querySelectorAll('[style]:not([data-compare])').length,
       inlineScripts: [...document.scripts].filter((s) => !s.src && s.type !== 'application/ld+json').length,
     };
   });

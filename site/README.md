@@ -1,0 +1,82 @@
+# CuttingEdge website v3 (source)
+
+Astro (static output) + one PHP endpoint. The build produces plain files you upload to Hostinger `public_html`.
+EN lives at `/`, NL under `/nl/` with Dutch slugs; every page exists as real HTML in both languages (no JS text swap).
+
+```
+site/
+├── src/
+│   ├── content/projects/*.yaml   one file per project  ← add a project here
+│   ├── assets/                   photos, posters, fonts, logo (processed by the Astro image pipeline)
+│   ├── i18n/                     all copy EN + NL (copy.ts, legal.ts)
+│   ├── lib/                      routes, SEO/JSON-LD, image helpers
+│   ├── views/ components/        page templates and UI pieces
+│   ├── pages/                    [...slug].astro (all pages), 404, robots, sitemap, llms.txt, og/*.jpg
+│   ├── scripts/                  ~10 KB vanilla JS (menu, video, filter, lightbox, compare, form)
+│   └── styles/global.css         design tokens + components (see DESIGN.md)
+├── public/                       copied as-is: .htaccess, api/ (PHP), media/ (videos), favicons
+├── scripts/                      prep-assets.mjs, gen-redirects.mjs, fonts/ (OG rendering)
+├── redirects.tsv                 legacy URL → new URL table (source of the .htaccess redirects)
+└── tests/                        crawl.mjs (Playwright), php-endpoint.test.sh
+../scripts/                       encode-videos.sh, extract-posters.sh, check-redirects.sh, serve-dist.py
+```
+
+## Requirements
+Node ≥ 22 (built with 26), npm. No other services. (PHP only to run the endpoint tests locally.)
+
+## Build
+
+```bash
+cd site
+npm ci
+npm run build            # production  → dist/    (base "/", indexable, https://cuttingedge.world)
+npm run build:preview    # preview     → dist-preview/ (base "/ce-website/", noindex, robots Disallow, form "preview, not sent")
+```
+The first build encodes ~250 AVIF/WebP images (several minutes on a slow CPU); later builds reuse the cache in `node_modules/.astro`.
+
+## Look at it locally
+
+```bash
+python3 ../scripts/serve-dist.py dist 8080 --htaccess public/.htaccess      # production build + legacy redirects
+python3 ../scripts/serve-dist.py dist-preview 8081 --prefix /ce-website    # preview build
+```
+`serve-dist.py` is a convenience server (trailing-slash redirects, 404 page, emulates the `RewriteRule` redirect lines only).
+To try the form end to end locally, also run `php -S 127.0.0.1:9000 -t dist` and add `--php http://127.0.0.1:9000`.
+
+## Add a project (no code changes)
+
+1. Put the photos under `src/assets/projects/<slug>/` (JPEG, long edge ≤ 2560 px is plenty).
+2. Copy `src/content/projects/restaurant-looks.yaml` to `src/content/projects/<slug>.yaml` and edit it:
+   ```yaml
+   id: 11                       # unique number; used for the OG image name
+   order: 11                    # position in lists
+   featured: false              # true → candidate for the 4 slots on the home page
+   sector: hospitality          # hospitality | residential | commercial
+   services: [turn-key-build]   # concept-design | technical-drawings | turn-key-build (may be empty)
+   slugs: { en: my-project, nl: mijn-project }     # URL parts (EN: /projects/my-project/, NL: /nl/projecten/mijn-project/)
+   title:   { en: My Project, nl: Mijn project }
+   summary: { en: "…", nl: "…" }                    # also the meta description
+   brief / challenge / outcome: optional { en, nl }
+   facts: [ { key: year, label: {en: Year, nl: Jaar}, value: {en: "2024", nl: "2024"} } ]
+   hero: ../../assets/projects/<slug>/main.jpg
+   heroAlt: { en: "Describe the picture", nl: "Beschrijf de foto" }   # alt text is required in both languages
+   gallery: [ { src: ../../assets/projects/<slug>/two.jpg, alt: {en, nl}, credit: "Photographer" } ]
+   video: null                  # or { src: <file in public/media without extension>, poster: ../../assets/posters/x.jpg, alt: {en, nl} }
+   ```
+3. `npm run build`. EN + NL pages, sitemap entries, hreflang, JSON-LD, OG image, redirects-free URL and the projects filter are generated. A build **fails** if a required field (such as alt text) is missing.
+4. For a video: `ffmpeg` a WebM (VP9) and MP4 (H.264) pair into `public/media/<name>.webm|mp4` (see `../scripts/encode-videos.sh` for the settings: ≤ 1280 px wide, no audio, hero ≤ 3 MB, others ≤ 4 MB).
+
+## Change the enquiry form
+* Recipient, sender, rate limit, data directory → `public/api/config.php` (edit on the server after upload, too).
+* Budget / timeline / sector / service choices → `public/api/form-options.json` (the keys) **and** the labels in `src/i18n/copy.ts` (`contactPage.*.budgets` etc.), then rebuild.
+* Test the endpoint: `PHP_BIN=/path/to/php bash tests/php-endpoint.test.sh` (starts its own `php -S`, 30 checks).
+
+## Change redirects
+Edit `redirects.tsv`, run `node scripts/gen-redirects.mjs` (rewrites the generated block in `public/.htaccess`), commit. Check against a live host with `../scripts/check-redirects.sh https://cuttingedge.world`.
+
+## Checks
+```bash
+export LD_LIBRARY_PATH=~/.local/share/chromium-deps/root/usr/lib/x86_64-linux-gnu    # only needed on the build host
+node tests/crawl.mjs http://127.0.0.1:8080/ --out crawl.json     # every page EN+NL: console, links, assets, alt, meta
+```
+Deploying: see `DEPLOY.md`. Open questions for the studio: `CONTENT-NEEDED.md`. Design system: `DESIGN.md`.

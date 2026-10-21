@@ -1,0 +1,1109 @@
+[
+ {
+  "url": "http://127.0.0.1:8081/ce-website/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "CuttingEdge | Interior Design & Turn-key Build, Amsterdam",
+  "lang": "en",
+  "desc": "Pragmatic luxury interiors from Amsterdam. Concept design, technical drawings and turn-key build for hospitality, residential and commercial spaces.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/home.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "CuttingEdge | Interieurontwerp & turn-key bouw Amsterdam",
+  "lang": "nl",
+  "desc": "Interieurstudio in Amsterdam voor pragmatische luxe. Conceptontwerp, technische tekeningen en turn-key interieurbouw voor horeca, woningen en commerciële ruimtes.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/home.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/404.html",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Page not found | CuttingEdge",
+  "lang": "en",
+  "desc": "This page could not be found. Pagina niet gevonden.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/404.html/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/home.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/approach/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Our Approach | Sketch, Visualisation, Realisation | CuttingEdge",
+  "lang": "en",
+  "desc": "How CuttingEdge works: scalable, brand-driven design, lean management and modern tools, taking a space from first sketch through visualisation to finished build.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/approach/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/approach/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/aanpak/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/approach/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/approach.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/aanpak/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Onze aanpak | Schets, visualisatie, realisatie | CuttingEdge",
+  "lang": "nl",
+  "desc": "Zo werkt CuttingEdge: schaalbaar merkgedreven ontwerp, lean projectaanpak en moderne tools, van eerste schets via visualisatie tot opgeleverde ruimte.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/aanpak/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/approach/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/aanpak/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/approach/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/approach.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/services/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Interior Design Services in Amsterdam | CuttingEdge",
+  "lang": "en",
+  "desc": "Concept design, technical drawings and turn-key build. One Amsterdam studio for hospitality, residential and commercial interiors, from idea to keys in hand.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/services/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/services/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/diensten/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/services/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/services.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/diensten/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Interieurontwerp Amsterdam: diensten | CuttingEdge",
+  "lang": "nl",
+  "desc": "Conceptontwerp, technische tekeningen en turn-key interieurbouw. Eén studio in Amsterdam voor horeca, woningen en commerciële interieurs, van idee tot sleuteloverdracht.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/diensten/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/services/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/diensten/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/services/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/services.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/services/concept-design/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Concept Design for Interiors | CuttingEdge Amsterdam",
+  "lang": "en",
+  "desc": "Interior concept design where brand identity becomes spatial experience: colour and material selection, furniture and fixture design. Amsterdam studio.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/services/concept-design/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/services/concept-design/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/diensten/conceptontwerp/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/services/concept-design/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/service-concept.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/diensten/conceptontwerp/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Conceptontwerp interieur | CuttingEdge Amsterdam",
+  "lang": "nl",
+  "desc": "Interieurconceptontwerp waarin merkidentiteit ruimtelijke beleving wordt: kleur- en materiaalkeuze, meubel- en inrichtingsontwerp. Studio in Amsterdam.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/diensten/conceptontwerp/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/services/concept-design/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/diensten/conceptontwerp/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/services/concept-design/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/service-concept.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/services/technical-drawings/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Technical Drawings for Interiors | CuttingEdge Amsterdam",
+  "lang": "en",
+  "desc": "Precise technical drawings for interior projects: electrical schematics and load planning, air conditioning and ventilation, and complete lighting plans.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/services/technical-drawings/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/services/technical-drawings/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/diensten/technische-tekeningen/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/services/technical-drawings/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/service-technical.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/diensten/technische-tekeningen/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Technische tekeningen interieur | CuttingEdge Amsterdam",
+  "lang": "nl",
+  "desc": "Nauwkeurige technische tekeningen voor interieurprojecten: elektraschema’s en belastingberekening, airco en ventilatie, en complete lichtplannen.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/diensten/technische-tekeningen/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/services/technical-drawings/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/diensten/technische-tekeningen/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/services/technical-drawings/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/service-technical.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/services/turn-key-build/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Turn-key Interior Build | CuttingEdge Amsterdam",
+  "lang": "en",
+  "desc": "Turn-key interior build from concept to keys in hand: vendor management, timeline control and quality control for hospitality, residential and commercial.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/services/turn-key-build/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/services/turn-key-build/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/diensten/turn-key-bouw/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/services/turn-key-build/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/service-turnkey.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/diensten/turn-key-bouw/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Turn-key interieurbouw | CuttingEdge Amsterdam",
+  "lang": "nl",
+  "desc": "Turn-key interieurbouw van concept tot sleuteloverdracht: leveranciersbeheer, planningsbewaking en kwaliteitscontrole voor horeca, wonen en commercieel.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/diensten/turn-key-bouw/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/services/turn-key-build/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/diensten/turn-key-bouw/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/services/turn-key-build/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/service-turnkey.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/projects/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Selected Projects | Hospitality, Residential, Commercial | CuttingEdge",
+  "lang": "en",
+  "desc": "A portfolio of interior projects by CuttingEdge: restaurants and bars, private residences and commercial spaces. Filter by sector.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/projects/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/projects.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/projecten/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Projecten | Horeca, wonen, commercieel | CuttingEdge",
+  "lang": "nl",
+  "desc": "Een portfolio van interieurprojecten van CuttingEdge: restaurants en bars, particuliere woningen en commerciële ruimtes. Filter op sector.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/projecten/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/projects.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/contact/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Contact & Project Enquiry | CuttingEdge Amsterdam",
+  "lang": "en",
+  "desc": "Tell us about your project in a few steps: sector, location, size, budget and timeline. We respond personally, typically within 24 hours.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/contact/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/contact/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/contact/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/contact/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/contact.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/contact/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Contact & projectaanvraag | CuttingEdge Amsterdam",
+  "lang": "nl",
+  "desc": "Vertel ons in een paar stappen over uw project: sector, locatie, oppervlak, budget en planning. Wij reageren persoonlijk, doorgaans binnen 24 uur.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/contact/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/contact/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/contact/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/contact/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/contact.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/privacy/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Privacy Policy | CuttingEdge",
+  "lang": "en",
+  "desc": "How CuttingEdge handles the personal data you send through the enquiry form: what we collect, why, how long we keep it and your rights.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/privacy/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/privacy/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/privacybeleid/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/privacy/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/privacy.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/privacybeleid/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Privacybeleid | CuttingEdge",
+  "lang": "nl",
+  "desc": "Hoe CuttingEdge omgaat met de persoonsgegevens die u via het aanvraagformulier verstuurt: wat we verzamelen, waarom, hoe lang en uw rechten.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/privacybeleid/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/privacy/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/privacybeleid/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/privacy/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/privacy.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/legal/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Legal Notice | CuttingEdge",
+  "lang": "en",
+  "desc": "Company details, general terms and website terms of CuttingEdge, Ookmeerweg 101, Amsterdam. KvK 34153096.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/legal/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/legal/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/juridisch/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/legal/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/legal.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/juridisch/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Juridische informatie | CuttingEdge",
+  "lang": "nl",
+  "desc": "Bedrijfsgegevens, algemene voorwaarden en websitevoorwaarden van CuttingEdge, Ookmeerweg 101, Amsterdam. KvK 34153096.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/juridisch/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/legal/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/juridisch/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/legal/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/legal.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/projects/hospitality-collection/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Hospitality Collection | Interior Project | CuttingEdge",
+  "lang": "en",
+  "desc": "A bar and lounge in Amsterdam, built turn-key around dramatic lighting, bespoke bar furniture and a gold mesh back wall.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/projects/hospitality-collection/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/hospitality-collection/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/horecacollectie/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/hospitality-collection/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/project-hospitality-collection.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/projecten/horecacollectie/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Horecacollectie | Interieurproject | CuttingEdge",
+  "lang": "nl",
+  "desc": "Een bar en lounge in Amsterdam, turn-key gebouwd rond dramatische verlichting, maatwerk barmeubilair en een gouden gaaswand.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/projecten/horecacollectie/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/hospitality-collection/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/horecacollectie/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/hospitality-collection/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/project-hospitality-collection.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/projects/restaurant-looks/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Restaurant Looks | Interior Project | CuttingEdge",
+  "lang": "en",
+  "desc": "A restaurant for fine dining with an approachable atmosphere, shaped by warm wood tones, soft light and a sculpted wall.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/projects/restaurant-looks/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/restaurant-looks/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/restaurant-looks/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/restaurant-looks/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/project-restaurant-looks.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/projecten/restaurant-looks/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Restaurant Looks | Interieurproject | CuttingEdge",
+  "lang": "nl",
+  "desc": "Een restaurant voor fine dining met een toegankelijke sfeer, vormgegeven met warme houttinten, zacht licht en een gebeeldhouwde wand.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/projecten/restaurant-looks/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/restaurant-looks/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/restaurant-looks/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/restaurant-looks/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/project-restaurant-looks.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/projects/thai-restaurant/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Thai Restaurant | Interior Project | CuttingEdge",
+  "lang": "en",
+  "desc": "A restaurant interior with a timber slatted ceiling, planted partitions and a glowing green entrance sign.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/projects/thai-restaurant/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/thai-restaurant/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/thais-restaurant/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/thai-restaurant/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/project-thai-restaurant.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/projecten/thais-restaurant/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Thais restaurant | Interieurproject | CuttingEdge",
+  "lang": "nl",
+  "desc": "Een restaurantinterieur met een houten lamellenplafond, beplante scheidingswanden en een oplichtend groen entreebord.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/projecten/thais-restaurant/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/thai-restaurant/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/thais-restaurant/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/thai-restaurant/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/project-thai-restaurant.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/projects/jewellery-boutique/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Jewellery Boutique | Interior Project | CuttingEdge",
+  "lang": "en",
+  "desc": "A jewellery boutique with quilted tan-leather walls, recessed illuminated display windows and dark wood counters.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/projects/jewellery-boutique/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/jewellery-boutique/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/juwelierszaak/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/jewellery-boutique/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/project-jewellery-boutique.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/projecten/juwelierszaak/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Juwelierszaak | Interieurproject | CuttingEdge",
+  "lang": "nl",
+  "desc": "Een juwelierszaak met gewatteerde cognackleurige leren wanden, verzonken verlichte etalagevensters en donkere houten balies.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/projecten/juwelierszaak/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/jewellery-boutique/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/juwelierszaak/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/jewellery-boutique/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/project-jewellery-boutique.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/projects/beauty-salon/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Beauty Salon | Interior Project | CuttingEdge",
+  "lang": "en",
+  "desc": "A beauty salon in a soft cream palette, with a sculptural spiral staircase and a curved white sofa, shown in a visualisation film.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/projects/beauty-salon/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/beauty-salon/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/schoonheidssalon/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/beauty-salon/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/project-beauty-salon.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/projecten/schoonheidssalon/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Schoonheidssalon | Interieurproject | CuttingEdge",
+  "lang": "nl",
+  "desc": "Een schoonheidssalon in een zacht crèmepalet, met een sculpturale wenteltrap en een gebogen witte bank, getoond in een visualisatiefilm.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/projecten/schoonheidssalon/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/beauty-salon/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/schoonheidssalon/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/beauty-salon/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/project-beauty-salon.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/projects/private-residence/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Private Residence | Interior Project | CuttingEdge",
+  "lang": "en",
+  "desc": "A dated Amsterdam townhouse reworked into a warm, contemporary home that respects the building’s heritage.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/projects/private-residence/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/private-residence/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/privewoning/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/private-residence/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/project-private-residence.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/projecten/privewoning/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Privéwoning | Interieurproject | CuttingEdge",
+  "lang": "nl",
+  "desc": "Een gedateerd Amsterdams herenhuis herwerkt tot een warme, eigentijdse woning die het erfgoed van het gebouw respecteert.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/projecten/privewoning/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/private-residence/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/privewoning/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/private-residence/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/project-private-residence.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/projects/heritage-villa/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Heritage Villa | Interior Project | CuttingEdge",
+  "lang": "en",
+  "desc": "Restoration of a 1920s villa that integrates modern amenities invisibly and respects its original architectural language.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/projects/heritage-villa/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/heritage-villa/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/historische-villa/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/heritage-villa/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/project-heritage-villa.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/projecten/historische-villa/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Historische villa | Interieurproject | CuttingEdge",
+  "lang": "nl",
+  "desc": "Restauratie van een villa uit de jaren twintig waarin moderne voorzieningen onzichtbaar zijn geïntegreerd en de oorspronkelijke bouwstijl wordt gerespecteerd.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/projecten/historische-villa/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/heritage-villa/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/historische-villa/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/heritage-villa/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/project-heritage-villa.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/projects/executive-suite/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Executive Suite | Interior Project | CuttingEdge",
+  "lang": "en",
+  "desc": "A suite that merges workspace functionality with hospitality comfort, with discrete work zones and a calm lounge.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/projects/executive-suite/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/executive-suite/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/directiesuite/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/executive-suite/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/project-executive-suite.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/projecten/directiesuite/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Directiesuite | Interieurproject | CuttingEdge",
+  "lang": "nl",
+  "desc": "Een suite die werkfunctionaliteit combineert met horecacomfort, met discrete werkzones en een rustige loungehoek.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/projecten/directiesuite/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/executive-suite/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/directiesuite/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/executive-suite/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/project-executive-suite.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/projects/johannes-obrecht/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Johannes Obrecht | Interior Project | CuttingEdge",
+  "lang": "en",
+  "desc": "A classic Amsterdam residence renovated into a modern family home, with open living spaces and original details preserved.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/projects/johannes-obrecht/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/johannes-obrecht/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/johannes-obrecht/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/johannes-obrecht/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/project-johannes-obrecht.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/projecten/johannes-obrecht/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Johannes Obrecht | Interieurproject | CuttingEdge",
+  "lang": "nl",
+  "desc": "Een klassieke Amsterdamse woning gerenoveerd tot een modern gezinshuis, met open leefruimtes en behouden originele details.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/projecten/johannes-obrecht/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/johannes-obrecht/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/johannes-obrecht/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/johannes-obrecht/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/project-johannes-obrecht.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/projects/kitchen-design/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Kitchen Design | Interior Project | CuttingEdge",
+  "lang": "en",
+  "desc": "A calm kitchen in pale oak with a white worktop, built-in appliances and slatted oak panelling.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/projects/kitchen-design/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/kitchen-design/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/keukenontwerp/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/kitchen-design/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/en/project-kitchen-design.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ },
+ {
+  "url": "http://127.0.0.1:8081/ce-website/nl/projecten/keukenontwerp/",
+  "consoleErrors": [],
+  "failedRequests": [],
+  "thirdParty": [],
+  "issues": [],
+  "status": 200,
+  "title": "Keukenontwerp | Interieurproject | CuttingEdge",
+  "lang": "nl",
+  "desc": "Een rustige keuken in licht eiken met een wit werkblad, inbouwapparatuur en eikenhouten lamellenpanelen.",
+  "canonical": "https://clubeedg-ship-it.github.io/ce-website/nl/projecten/keukenontwerp/",
+  "robots": "noindex, nofollow",
+  "hreflang": [
+   "en=https://clubeedg-ship-it.github.io/ce-website/projects/kitchen-design/",
+   "nl=https://clubeedg-ship-it.github.io/ce-website/nl/projecten/keukenontwerp/",
+   "x-default=https://clubeedg-ship-it.github.io/ce-website/projects/kitchen-design/"
+  ],
+  "ogImage": "https://clubeedg-ship-it.github.io/ce-website/og/nl/project-kitchen-design.jpg",
+  "h1": 1,
+  "imgNoAlt": 0,
+  "imgBroken": 0,
+  "jsonld": [
+   "ok"
+  ],
+  "inlineStyle": 0,
+  "inlineScripts": 0
+ }
+]

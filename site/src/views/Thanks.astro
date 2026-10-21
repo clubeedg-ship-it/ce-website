@@ -10,7 +10,7 @@ const t = ui[lang];
 const c = contactPage[lang];
 const trail = [{ name: t.navHome, path: staticRoutes.home[lang] }, { name: t.navContact, path: staticRoutes.contact[lang] }, { name: c.thanksH1, path: page.path }];
 ---
-<Base page={page} trail={trail} noindex>
+<Base page={page} trail={trail} noindex ogKey="contact">
   <section class="nf">
     <div class="wrap">
       <p class="eyebrow">{t.navContact}</p>

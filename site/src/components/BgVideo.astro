@@ -5,7 +5,7 @@ import { asset } from '../lib/routes';
 interface Props { lg: string; sm?: string; id: string }
 const { lg, sm = lg, id } = Astro.props;
 ---
-<video id={id} muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" disablePictureInPicture
+<video id={id} muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"
   data-bgvideo
   data-webm-lg={asset(`media/${lg}.webm`)} data-mp4-lg={asset(`media/${lg}.mp4`)}
   data-webm-sm={asset(`media/${sm}.webm`)} data-mp4-sm={asset(`media/${sm}.mp4`)}></video>

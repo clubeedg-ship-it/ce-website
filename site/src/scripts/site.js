@@ -51,6 +51,7 @@ if (vids.length) {
   const paused = new WeakMap();
   const attach = (v) => {
     if (v.dataset.ready) return;
+    v.disablePictureInPicture = true;
     const k = small.matches ? 'Sm' : 'Lg';
     v.src = v.dataset[(webm ? 'webm' : 'mp4') + k];
     v.dataset.ready = '1';

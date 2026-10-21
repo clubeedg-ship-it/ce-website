@@ -1,10 +1,13 @@
 // Accessible lightbox on <dialog>: arrows/Escape, swipe, focus returns to the opener.
 const dlg = document.querySelector('[data-lightbox]');
 const items = [...document.querySelectorAll('[data-gallery] button')];
-const img = dlg.querySelector('[data-lb-img]');
+const img = new Image();
+img.alt = '';
+const stage = dlg.querySelector('[data-lb-stage]');
 const cap = dlg.querySelector('[data-lb-cap]');
 let i = 0;
 const show = (n) => {
+  if (!img.isConnected) stage.append(img);
   i = (n + items.length) % items.length;
   const b = items[i];
   img.src = b.dataset.full;
