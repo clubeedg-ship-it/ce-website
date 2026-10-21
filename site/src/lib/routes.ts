@@ -3,7 +3,7 @@ export const languages = ['en', 'nl'] as const;
 export type Lang = (typeof languages)[number];
 
 export const PREVIEW = process.env.PREVIEW === "1";
-export const SITE = PREVIEW ? 'https://clubeedg-ship-it.github.io' : 'https://cuttingedge.world';
+export const SITE = PREVIEW ? (process.env.PREVIEW_SITE || 'https://clubeedg-ship-it.github.io') : 'https://cuttingedge.world';
 const BASE = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
 
 export type RouteKey =
